@@ -1,0 +1,23 @@
+{
+  "email_id": "fix-02",
+  "from": "priya.r@anthropic.com",
+  "subject": "Anthropic — quick chat about Product Manager, Claude Code",
+  "body": "Hi Jane,\n\nI'm a recruiter at Anthropic — really enjoyed your OpenLedger project, and your developer-experience work at Stripe lines up well with the PM, Claude Code role we're hiring for.\n\nWould love to set up a 30-minute chat to walk you through the role and the team. I have the following slots open this week — all times Pacific:\n\n- Wed Jun 3, 10:00–10:30 AM PT\n- Thu Jun 4, 2:00–2:30 PM PT\n- Fri Jun 5, 11:00–11:30 AM PT\n\nLet me know what works, or feel free to suggest other times.\n\nBest,\nPriya",
+  "date": "2026-05-29",
+  "thread": [],
+  "_expected": {
+    "class": "screen",
+    "company": "Anthropic",
+    "role": "Product Manager, Claude Code",
+    "extraction": {
+      "dates": [
+        {"iso": "2026-06-03", "time": "10:00", "tz": "America/Los_Angeles", "label": "Wed Jun 3, 10:00 PT"},
+        {"iso": "2026-06-04", "time": "14:00", "tz": "America/Los_Angeles", "label": "Thu Jun 4, 2:00 PT"},
+        {"iso": "2026-06-05", "time": "11:00", "tz": "America/Los_Angeles", "label": "Fri Jun 5, 11:00 PT"}
+      ]
+    },
+    "suggested_action": "reply-schedule",
+    "sentiment": "positive",
+    "confidence": "high"
+  }
+}

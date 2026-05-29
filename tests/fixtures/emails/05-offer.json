@@ -1,0 +1,21 @@
+{
+  "email_id": "fix-05",
+  "from": "talent@mercury.com",
+  "subject": "Mercury — Offer: Senior Product Manager, API & Agentic Banking",
+  "body": "Hi Jane,\n\nIt's our pleasure to extend you an offer to join Mercury as Senior Product Manager, API & Agentic Banking, reporting to the Director of API Platform.\n\nCompensation:\n- Base: $215,000\n- Equity: 8,500 ISOs vesting over 4 years (1-year cliff)\n- Signing bonus: $25,000\n- Target start date: 2026-07-06 or sooner\n\nThe full written offer with benefits and details is attached.\n\nWe'd love to hear back by 2026-06-05. Happy to set up a call to walk through any questions.\n\nWelcome (we hope!),\nMercury Talent",
+  "date": "2026-05-29",
+  "thread": [],
+  "_expected": {
+    "class": "offer",
+    "company": "Mercury",
+    "role": "Senior Product Manager, API & Agentic Banking",
+    "extraction": {
+      "deadline": "2026-06-05",
+      "dates": [{"iso": "2026-07-06", "label": "target start"}]
+    },
+    "suggested_action": "reply-ask",
+    "sentiment": "positive",
+    "confidence": "high",
+    "_notes": "Always reply-ask on offer — never reply-accept. Guardrail."
+  }
+}

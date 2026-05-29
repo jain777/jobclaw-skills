@@ -1,0 +1,17 @@
+{
+  "email_id": "fix-12",
+  "from": "talent@gusto.com",
+  "subject": "Gusto — update on Sr. PM, Document Studio",
+  "body": "Hi Jane,\n\nThanks for the time you put into your application to the Sr. PM, Document Studio role.\n\nWe were genuinely impressed by your background, and the conversation with the hiring manager last week was a strong one. After comparing across the slate, we've decided to move forward with another candidate whose specific experience with document workflows is a closer match for what the team needs in the next 12 months.\n\nWe'd love to stay in touch — we'll be hiring more PMs in 2026, and your profile is one we'd want to keep on the radar.\n\nWarmly,\nGusto Talent",
+  "date": "2026-05-29",
+  "thread": ["[2026-05-22] hiring-manager interview"],
+  "_expected": {
+    "class": "rejection",
+    "company": "Gusto",
+    "role": "Sr. PM, Document Studio",
+    "suggested_action": "acknowledge",
+    "sentiment": "negative",
+    "confidence": "high",
+    "_notes": "Stress case: polite phrasing ('impressed', 'strong conversation', 'stay in touch', 'on the radar') makes this look closer to a hold than a rejection. The decisive signal is 'move forward with another candidate'. Always rejection — never screen, never info."
+  }
+}

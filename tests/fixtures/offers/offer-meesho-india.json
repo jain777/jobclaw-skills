@@ -1,0 +1,23 @@
+{
+  "company": "Meesho",
+  "role": "Senior Product Manager",
+  "level": "Senior PM",
+  "currency": "INR",
+  "ctc": {
+    "fixed_lpa": 42,
+    "variable_lpa": 8,
+    "esops": {
+      "grant_value_inr": 1500000,
+      "vest_years": 4,
+      "cliff_months": 12
+    },
+    "retention_bonus_lpa": 2,
+    "total_lpa": 52
+  },
+  "notice_period_requested_days": 30,
+  "location": "Bangalore",
+  "start_date_target": "2026-07-15",
+  "deadline": "2026-06-10",
+  "competing_offers": [],
+  "_notes": "Test input for coach-negotiation in IN-mode. Expected: INR LPA structure (fixed + variable + ESOPs + retention) NOT USD; notice period is a negotiation lever; counter anchors on fixed_lpa first. Never auto-send."
+}

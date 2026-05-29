@@ -1,0 +1,14 @@
+{
+  "email_id": "fix-09",
+  "from": "winner-prize@offer-claim.biz",
+  "subject": "URGENT - You've been selected for a $5000 Amazon Gift Card!!!",
+  "body": "Congratulations Jane!!! You have been SELECTED for a $5,000 Amazon Gift Card prize!!!\n\nClick here within 24 HOURS to claim: http://claim-prize-now.biz/jane-doe-786\n\nThis offer expires soon - DO NOT MISS OUT.\n\nGift Card Promotions Team",
+  "date": "2026-05-29",
+  "thread": [],
+  "_expected": {
+    "class": "spam",
+    "suggested_action": "ignore",
+    "sentiment": "neutral",
+    "confidence": "high"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "company": "Mercury",
+  "role": "Senior Product Manager, API & Agentic Banking",
+  "level": "Senior",
+  "currency": "USD",
+  "base": 215000,
+  "equity": {
+    "type": "ISO",
+    "shares": 8500,
+    "vest_years": 4,
+    "cliff_months": 12,
+    "current_strike": null,
+    "current_409a_value": null
+  },
+  "bonus": {
+    "kind": "target_annual",
+    "target_pct": 20
+  },
+  "signing": 25000,
+  "location": "Remote (US)",
+  "start_date_target": "2026-07-06",
+  "deadline": "2026-06-05",
+  "competing_offers": [],
+  "_source_email_id": "fix-05",
+  "_notes": "Test input for coach-negotiation. Expected output: US-structured strategy (base/equity/bonus/signing components), leverage analysis (verbatim from JD match + recruiter chat history), counter email with floor/target/walk-away per component. Never auto-send."
+}

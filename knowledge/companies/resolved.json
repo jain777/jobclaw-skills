@@ -1,0 +1,1741 @@
+{
+  "version": 1,
+  "generated_at": "2026-05-29",
+  "companies": {
+    "anthropic": {
+      "name": "Anthropic",
+      "region": "US",
+      "sector": "technology",
+      "boards": [
+        {
+          "ats": "greenhouse",
+          "token": "anthropic",
+          "board_url": "https://boards.greenhouse.io/anthropic",
+          "fetchable": true
+        }
+      ],
+      "status": "verified",
+      "resolved_via": "csv",
+      "checked_at": "2026-05-29"
+    },
+    "databricks": {
+      "name": "Databricks",
+      "region": "US",
+      "sector": "technology",
+      "boards": [
+        {
+          "ats": "greenhouse",
+          "token": "databricks",
+          "board_url": "https://boards.greenhouse.io/databricks",
+          "fetchable": true
+        }
+      ],
+      "status": "verified",
+      "resolved_via": "csv",
+      "checked_at": "2026-05-29"
+    },
+    "vercel": {
+      "name": "Vercel",
+      "region": "US",
+      "sector": "technology",
+      "boards": [
+        {
+          "ats": "greenhouse",
+          "token": "vercel",
+          "board_url": "https://boards.greenhouse.io/vercel",
+          "fetchable": true
+        }
+      ],
+      "status": "verified",
+      "resolved_via": "csv",
+      "checked_at": "2026-05-29"
+    },
+    "figma": {
+      "name": "Figma",
+      "region": "US",
+      "sector": "technology",
+      "boards": [
+        {
+          "ats": "greenhouse",
+          "token": "figma",
+          "board_url": "https://boards.greenhouse.io/figma",
+          "fetchable": true
+        }
+      ],
+      "status": "verified",
+      "resolved_via": "csv",
+      "checked_at": "2026-05-29"
+    },
+    "scale-ai": {
+      "name": "Scale AI",
+      "region": "US",
+      "sector": "technology",
+      "boards": [
+        {
+          "ats": "greenhouse",
+          "token": "scaleai",
+          "board_url": "https://boards.greenhouse.io/scaleai",
+          "fetchable": true
+        }
+      ],
+      "status": "verified",
+      "resolved_via": "discover",
+      "checked_at": "2026-05-29"
+    },
+    "mercury": {
+      "name": "Mercury",
+      "region": "US",
+      "sector": "finance-banking",
+      "boards": [
+        {
+          "ats": "greenhouse",
+          "token": "mercury",
+          "board_url": "https://boards.greenhouse.io/mercury",
+          "fetchable": true
+        }
+      ],
+      "status": "verified",
+      "resolved_via": "csv",
+      "checked_at": "2026-05-29"
+    },
+    "brex": {
+      "name": "Brex",
+      "region": "US",
+      "sector": "finance-banking",
+      "boards": [
+        {
+          "ats": "greenhouse",
+          "token": "brex",
+          "board_url": "https://boards.greenhouse.io/brex",
+          "fetchable": true
+        }
+      ],
+      "status": "verified",
+      "resolved_via": "csv",
+      "checked_at": "2026-05-29"
+    },
+    "stripe": {
+      "name": "Stripe",
+      "region": "US",
+      "sector": "finance-banking",
+      "boards": [
+        {
+          "ats": "greenhouse",
+          "token": "stripe",
+          "board_url": "https://boards.greenhouse.io/stripe",
+          "fetchable": true
+        }
+      ],
+      "status": "verified",
+      "resolved_via": "csv",
+      "checked_at": "2026-05-29"
+    },
+    "gusto": {
+      "name": "Gusto",
+      "region": "US",
+      "sector": "technology",
+      "boards": [
+        {
+          "ats": "greenhouse",
+          "token": "gusto",
+          "board_url": "https://boards.greenhouse.io/gusto",
+          "fetchable": true
+        }
+      ],
+      "status": "verified",
+      "resolved_via": "csv",
+      "checked_at": "2026-05-29"
+    },
+    "checkr": {
+      "name": "Checkr",
+      "region": "US",
+      "sector": "technology",
+      "boards": [
+        {
+          "ats": "greenhouse",
+          "token": "checkr",
+          "board_url": "https://boards.greenhouse.io/checkr",
+          "fetchable": true
+        }
+      ],
+      "status": "verified",
+      "resolved_via": "csv",
+      "checked_at": "2026-05-29"
+    },
+    "airtable": {
+      "name": "Airtable",
+      "region": "US",
+      "sector": "technology",
+      "boards": [
+        {
+          "ats": "greenhouse",
+          "token": "airtable",
+          "board_url": "https://boards.greenhouse.io/airtable",
+          "fetchable": true
+        }
+      ],
+      "status": "verified",
+      "resolved_via": "csv",
+      "checked_at": "2026-05-29"
+    },
+    "notion": {
+      "name": "Notion",
+      "region": "US",
+      "sector": "technology",
+      "boards": [
+        {
+          "ats": "ashby",
+          "token": "Notion",
+          "board_url": "https://jobs.ashbyhq.com/Notion",
+          "fetchable": true
+        }
+      ],
+      "status": "verified",
+      "resolved_via": "discover",
+      "checked_at": "2026-05-29"
+    },
+    "openai": {
+      "name": "OpenAI",
+      "region": "US",
+      "sector": "technology",
+      "boards": [
+        {
+          "ats": "ashby",
+          "token": "OpenAI",
+          "board_url": "https://jobs.ashbyhq.com/OpenAI",
+          "fetchable": true
+        }
+      ],
+      "status": "verified",
+      "resolved_via": "discover",
+      "checked_at": "2026-05-29"
+    },
+    "linear": {
+      "name": "Linear",
+      "region": "US",
+      "sector": "technology",
+      "boards": [
+        {
+          "ats": "ashby",
+          "token": "Linear",
+          "board_url": "https://jobs.ashbyhq.com/Linear",
+          "fetchable": true
+        }
+      ],
+      "status": "verified",
+      "resolved_via": "discover",
+      "checked_at": "2026-05-29"
+    },
+    "postman": {
+      "name": "Postman",
+      "region": "IN",
+      "sector": "technology",
+      "boards": [
+        {
+          "ats": "greenhouse",
+          "token": "postman",
+          "board_url": "https://boards.greenhouse.io/postman",
+          "fetchable": true
+        }
+      ],
+      "status": "verified",
+      "resolved_via": "csv",
+      "checked_at": "2026-05-29"
+    },
+    "groww": {
+      "name": "Groww",
+      "region": "IN",
+      "sector": "finance-banking",
+      "boards": [
+        {
+          "ats": "greenhouse",
+          "token": "groww",
+          "board_url": "https://boards.greenhouse.io/groww",
+          "fetchable": true
+        }
+      ],
+      "status": "verified",
+      "resolved_via": "csv",
+      "checked_at": "2026-05-29"
+    },
+    "meesho": {
+      "name": "Meesho",
+      "region": "IN",
+      "sector": "retail-consumer",
+      "boards": [
+        {
+          "ats": "lever",
+          "token": "meesho",
+          "board_url": "https://jobs.lever.co/meesho",
+          "fetchable": true
+        }
+      ],
+      "status": "verified",
+      "resolved_via": "csv",
+      "checked_at": "2026-05-29"
+    },
+    "cred": {
+      "name": "CRED",
+      "region": "IN",
+      "sector": "finance-banking",
+      "boards": [
+        {
+          "ats": "lever",
+          "token": "cred",
+          "board_url": "https://jobs.lever.co/cred",
+          "fetchable": true
+        }
+      ],
+      "status": "verified",
+      "resolved_via": "csv",
+      "checked_at": "2026-05-29"
+    },
+    "retool": {
+      "name": "Retool",
+      "region": "US",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "phonepe": {
+      "name": "PhonePe",
+      "region": "IN",
+      "sector": "finance-banking",
+      "boards": [
+        {
+          "ats": "greenhouse",
+          "token": "phonepe",
+          "board_url": "https://boards.greenhouse.io/phonepe",
+          "fetchable": true
+        }
+      ],
+      "status": "verified",
+      "resolved_via": "discover",
+      "checked_at": "2026-05-29"
+    },
+    "tempus": {
+      "name": "Tempus",
+      "region": "US",
+      "sector": "healthcare-pharma",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "ramp": {
+      "name": "Ramp",
+      "region": "US",
+      "sector": "technology",
+      "boards": [
+        {
+          "ats": "ashby",
+          "token": "Ramp",
+          "board_url": "https://jobs.ashbyhq.com/Ramp",
+          "fetchable": true
+        }
+      ],
+      "status": "verified",
+      "resolved_via": "discover",
+      "checked_at": "2026-05-29"
+    },
+    "harvey": {
+      "name": "Harvey",
+      "region": "US",
+      "sector": "technology",
+      "boards": [
+        {
+          "ats": "ashby",
+          "token": "Harvey",
+          "board_url": "https://jobs.ashbyhq.com/Harvey",
+          "fetchable": true
+        }
+      ],
+      "status": "verified",
+      "resolved_via": "discover",
+      "checked_at": "2026-05-29"
+    },
+    "razorpay": {
+      "name": "Razorpay",
+      "region": "IN",
+      "sector": "finance-banking",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "abridge": {
+      "name": "Abridge",
+      "region": "US",
+      "sector": "healthcare-pharma",
+      "boards": [
+        {
+          "ats": "ashby",
+          "token": "abridge",
+          "board_url": "https://jobs.ashbyhq.com/abridge",
+          "fetchable": true
+        }
+      ],
+      "status": "verified",
+      "resolved_via": "discover",
+      "checked_at": "2026-05-29"
+    },
+    "zerodha": {
+      "name": "Zerodha",
+      "region": "IN",
+      "sector": "finance-banking",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "freshworks": {
+      "name": "Freshworks",
+      "region": "IN",
+      "sector": "technology",
+      "boards": [
+        {
+          "ats": "smartrecruiters",
+          "token": "Freshworks",
+          "board_url": "https://jobs.smartrecruiters.com/Freshworks",
+          "fetchable": true
+        }
+      ],
+      "status": "verified",
+      "resolved_via": "discover",
+      "checked_at": "2026-05-29"
+    },
+    "swiggy": {
+      "name": "Swiggy",
+      "region": "IN",
+      "sector": "retail-consumer",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "zomato": {
+      "name": "Zomato",
+      "region": "IN",
+      "sector": "retail-consumer",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "browserstack": {
+      "name": "BrowserStack",
+      "region": "IN",
+      "sector": "technology",
+      "boards": [
+        {
+          "ats": "workday",
+          "token": "browserstack/External",
+          "board_url": "https://browserstack.wd3.myworkdayjobs.com/wday/cxs/browserstack/External",
+          "fetchable": true
+        }
+      ],
+      "status": "verified",
+      "resolved_via": "sniff",
+      "checked_at": "2026-05-29"
+    },
+    "hasura": {
+      "name": "Hasura",
+      "region": "IN",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "atlan": {
+      "name": "Atlan",
+      "region": "IN",
+      "sector": "technology",
+      "boards": [
+        {
+          "ats": "ashby",
+          "token": "atlan",
+          "board_url": "https://jobs.ashbyhq.com/atlan",
+          "fetchable": true
+        }
+      ],
+      "status": "verified",
+      "resolved_via": "discover",
+      "checked_at": "2026-05-29"
+    },
+    "zoho": {
+      "name": "Zoho",
+      "region": "IN",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "sarvam-ai": {
+      "name": "Sarvam AI",
+      "region": "IN",
+      "sector": "technology",
+      "boards": [
+        {
+          "ats": "ashby",
+          "token": "sarvam",
+          "board_url": "jobs.ashbyhq.com/sarvam",
+          "fetchable": true
+        }
+      ],
+      "status": "verified",
+      "resolved_via": "sniff",
+      "checked_at": "2026-05-29"
+    },
+    "apple-inc": {
+      "name": "Apple Inc.",
+      "region": "US",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "microsoft-corporation": {
+      "name": "Microsoft Corporation",
+      "region": "US",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "meta-platforms-inc": {
+      "name": "Meta Platforms, Inc.",
+      "region": "US",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "amazon-com-inc": {
+      "name": "Amazon.com, Inc.",
+      "region": "US",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "innovaccer": {
+      "name": "Innovaccer",
+      "region": "IN",
+      "sector": "healthcare-pharma",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "alphabet-inc-google": {
+      "name": "Alphabet Inc. (Google)",
+      "region": "US",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "nvidia-corporation": {
+      "name": "NVIDIA Corporation",
+      "region": "US",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "intel-corporation": {
+      "name": "Intel Corporation",
+      "region": "US",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "oracle-corporation": {
+      "name": "Oracle Corporation",
+      "region": "US",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "salesforce-inc": {
+      "name": "Salesforce, Inc.",
+      "region": "US",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "ibm": {
+      "name": "IBM",
+      "region": "US",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "palantir-technologies": {
+      "name": "Palantir Technologies",
+      "region": "US",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "snowflake-inc": {
+      "name": "Snowflake Inc.",
+      "region": "US",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "adobe-inc": {
+      "name": "Adobe Inc.",
+      "region": "US",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "shopify-inc": {
+      "name": "Shopify Inc.",
+      "region": "US",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "workday-inc": {
+      "name": "Workday, Inc.",
+      "region": "US",
+      "sector": "technology",
+      "boards": [
+        {
+          "ats": "workday",
+          "token": "workday/Workday",
+          "board_url": "https://workday.wd5.myworkdayjobs.com/wday/cxs/workday/Workday",
+          "fetchable": true
+        }
+      ],
+      "status": "verified",
+      "resolved_via": "sniff",
+      "checked_at": "2026-05-29"
+    },
+    "cisco-systems-inc": {
+      "name": "Cisco Systems, Inc.",
+      "region": "US",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "servicenow-inc": {
+      "name": "ServiceNow, Inc.",
+      "region": "US",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "datadog-inc": {
+      "name": "Datadog, Inc.",
+      "region": "US",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "hashicorp": {
+      "name": "HashiCorp",
+      "region": "US",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "cloudflare-inc": {
+      "name": "Cloudflare, Inc.",
+      "region": "US",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "anduril-industries": {
+      "name": "Anduril Industries",
+      "region": "US",
+      "sector": "technology",
+      "boards": [
+        {
+          "ats": "greenhouse",
+          "token": "andurilindustries",
+          "board_url": "https://boards.greenhouse.io/andurilindustries",
+          "fetchable": true
+        }
+      ],
+      "status": "verified",
+      "resolved_via": "discover",
+      "checked_at": "2026-05-29"
+    },
+    "mongodb-inc": {
+      "name": "MongoDB, Inc.",
+      "region": "US",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "zendesk": {
+      "name": "Zendesk",
+      "region": "US",
+      "sector": "technology",
+      "boards": [
+        {
+          "ats": "workday",
+          "token": "zendesk/zendesk",
+          "board_url": "https://zendesk.wd1.myworkdayjobs.com/wday/cxs/zendesk/zendesk",
+          "fetchable": true
+        }
+      ],
+      "status": "verified",
+      "resolved_via": "sniff",
+      "checked_at": "2026-05-29"
+    },
+    "twilio-inc": {
+      "name": "Twilio Inc.",
+      "region": "US",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "okta-inc": {
+      "name": "Okta, Inc.",
+      "region": "US",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "hubspot-inc": {
+      "name": "HubSpot, Inc.",
+      "region": "US",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "rippling": {
+      "name": "Rippling",
+      "region": "US",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "plaid-inc": {
+      "name": "Plaid Inc.",
+      "region": "US",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "target-corporation": {
+      "name": "Target Corporation",
+      "region": "US",
+      "sector": "retail-consumer",
+      "boards": [
+        {
+          "ats": "workday",
+          "token": "target/login",
+          "board_url": "https://target.wd5.myworkdayjobs.com/wday/cxs/target/login",
+          "fetchable": true
+        }
+      ],
+      "status": "verified",
+      "resolved_via": "sniff",
+      "checked_at": "2026-05-29"
+    },
+    "walmart": {
+      "name": "Walmart",
+      "region": "US",
+      "sector": "retail-consumer",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "github-inc": {
+      "name": "GitHub, Inc.",
+      "region": "US",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "the-home-depot": {
+      "name": "The Home Depot",
+      "region": "US",
+      "sector": "retail-consumer",
+      "boards": [
+        {
+          "ats": "workday",
+          "token": "homedepot/login",
+          "board_url": "https://homedepot.wd5.myworkdayjobs.com/wday/cxs/homedepot/login",
+          "fetchable": true
+        }
+      ],
+      "status": "verified",
+      "resolved_via": "sniff",
+      "checked_at": "2026-05-29"
+    },
+    "kroger": {
+      "name": "Kroger",
+      "region": "US",
+      "sector": "retail-consumer",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "lowe-s-companies": {
+      "name": "Lowe's Companies",
+      "region": "US",
+      "sector": "retail-consumer",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "costco-wholesale": {
+      "name": "Costco Wholesale",
+      "region": "US",
+      "sector": "retail-consumer",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "avenue-supermarts-limited-dmart": {
+      "name": "Avenue Supermarts Limited (DMart)",
+      "region": "IN",
+      "sector": "retail-consumer",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "shoppers-stop-limited": {
+      "name": "Shoppers Stop Limited",
+      "region": "IN",
+      "sector": "retail-consumer",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "aditya-birla-fashion-and-retail-limited-": {
+      "name": "Aditya Birla Fashion and Retail Limited (ABFRL)",
+      "region": "IN",
+      "sector": "retail-consumer",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "titan-company-limited": {
+      "name": "Titan Company Limited",
+      "region": "IN",
+      "sector": "retail-consumer",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "reliance-retail-ventures-limited": {
+      "name": "Reliance Retail Ventures Limited",
+      "region": "IN",
+      "sector": "retail-consumer",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "trent-limited": {
+      "name": "Trent Limited",
+      "region": "IN",
+      "sector": "retail-consumer",
+      "boards": [
+        {
+          "ats": "successfactors",
+          "token": "rmkcdn",
+          "board_url": "rmkcdn.successfactors.com",
+          "fetchable": false
+        }
+      ],
+      "status": "detected_unfetchable",
+      "resolved_via": "sniff",
+      "checked_at": "2026-05-29"
+    },
+    "kalyan-jewellers-india-limited": {
+      "name": "Kalyan Jewellers India Limited",
+      "region": "IN",
+      "sector": "retail-consumer",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "vedant-fashions-limited-manyavar": {
+      "name": "Vedant Fashions Limited (Manyavar)",
+      "region": "IN",
+      "sector": "retail-consumer",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "hindustan-unilever-limited": {
+      "name": "Hindustan Unilever Limited",
+      "region": "IN",
+      "sector": "retail-consumer",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "godrej-consumer-products-limited": {
+      "name": "Godrej Consumer Products Limited",
+      "region": "IN",
+      "sector": "retail-consumer",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "v-mart-retail-limited": {
+      "name": "V-Mart Retail Limited",
+      "region": "IN",
+      "sector": "retail-consumer",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "itc-limited": {
+      "name": "ITC Limited",
+      "region": "IN",
+      "sector": "retail-consumer",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "dabur-india-limited": {
+      "name": "Dabur India Limited",
+      "region": "IN",
+      "sector": "retail-consumer",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "eternal-limited-blinkit": {
+      "name": "Eternal Limited (Blinkit)",
+      "region": "IN",
+      "sector": "retail-consumer",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "tata-consumer-products-limited": {
+      "name": "Tata Consumer Products Limited",
+      "region": "IN",
+      "sector": "retail-consumer",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "myntra": {
+      "name": "Myntra",
+      "region": "IN",
+      "sector": "retail-consumer",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "marico-limited": {
+      "name": "Marico Limited",
+      "region": "IN",
+      "sector": "retail-consumer",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "zepto": {
+      "name": "Zepto",
+      "region": "IN",
+      "sector": "retail-consumer",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "lenskart": {
+      "name": "Lenskart",
+      "region": "IN",
+      "sector": "retail-consumer",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "boat-imagine-marketing-limited": {
+      "name": "boAt (Imagine Marketing Limited)",
+      "region": "IN",
+      "sector": "retail-consumer",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "honasa-consumer-limited-mamaearth": {
+      "name": "Honasa Consumer Limited (Mamaearth)",
+      "region": "IN",
+      "sector": "retail-consumer",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "purplle-social-beauty-commerce": {
+      "name": "Purplle (Social Beauty Commerce)",
+      "region": "IN",
+      "sector": "retail-consumer",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "sugar-cosmetics": {
+      "name": "SUGAR Cosmetics",
+      "region": "IN",
+      "sector": "retail-consumer",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "britannia-industries-limited": {
+      "name": "Britannia Industries Limited",
+      "region": "IN",
+      "sector": "food-beverage",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "united-breweries-limited": {
+      "name": "United Breweries Limited",
+      "region": "IN",
+      "sector": "food-beverage",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "united-spirits-limited": {
+      "name": "United Spirits Limited",
+      "region": "IN",
+      "sector": "food-beverage",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "bigbasket-tata-digital": {
+      "name": "BigBasket (Tata Digital)",
+      "region": "IN",
+      "sector": "retail-consumer",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "nestle-india-limited": {
+      "name": "Nestle India Limited",
+      "region": "IN",
+      "sector": "food-beverage",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "allied-blenders-and-distillers-limited": {
+      "name": "Allied Blenders and Distillers Limited",
+      "region": "IN",
+      "sector": "food-beverage",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "varun-beverages-limited": {
+      "name": "Varun Beverages Limited",
+      "region": "IN",
+      "sector": "food-beverage",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "radico-khaitan-limited": {
+      "name": "Radico Khaitan Limited",
+      "region": "IN",
+      "sector": "food-beverage",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "jubilant-foodworks-limited": {
+      "name": "Jubilant FoodWorks Limited",
+      "region": "IN",
+      "sector": "food-beverage",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "devyani-international-limited": {
+      "name": "Devyani International Limited",
+      "region": "IN",
+      "sector": "food-beverage",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "hatsun-agro-product-limited": {
+      "name": "Hatsun Agro Product Limited",
+      "region": "IN",
+      "sector": "food-beverage",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "bikaji-foods-international-limited": {
+      "name": "Bikaji Foods International Limited",
+      "region": "IN",
+      "sector": "food-beverage",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "awl-agri-business-limited": {
+      "name": "AWL Agri Business Limited",
+      "region": "IN",
+      "sector": "food-beverage",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "eternal-limited": {
+      "name": "Eternal Limited",
+      "region": "IN",
+      "sector": "food-beverage",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "vadilal-industries-limited": {
+      "name": "Vadilal Industries Limited",
+      "region": "IN",
+      "sector": "food-beverage",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "parag-milk-foods-limited": {
+      "name": "Parag Milk Foods Limited",
+      "region": "IN",
+      "sector": "food-beverage",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "licious": {
+      "name": "Licious",
+      "region": "IN",
+      "sector": "food-beverage",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "prataap-snacks-limited": {
+      "name": "Prataap Snacks Limited",
+      "region": "IN",
+      "sector": "food-beverage",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "id-fresh-food": {
+      "name": "iD Fresh Food",
+      "region": "IN",
+      "sector": "food-beverage",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "b9-beverages-bira-91": {
+      "name": "B9 Beverages (Bira 91)",
+      "region": "IN",
+      "sector": "food-beverage",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "country-delight": {
+      "name": "Country Delight",
+      "region": "IN",
+      "sector": "food-beverage",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "waycool-foods-and-products": {
+      "name": "WayCool Foods and Products",
+      "region": "IN",
+      "sector": "food-beverage",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "infosys-in": {
+      "name": "Infosys",
+      "region": "IN",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "tata-consultancy-services-in": {
+      "name": "Tata Consultancy Services",
+      "region": "IN",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "tech-mahindra": {
+      "name": "Tech Mahindra",
+      "region": "IN",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "hcl-technologies": {
+      "name": "HCL Technologies",
+      "region": "IN",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "wipro-in": {
+      "name": "Wipro",
+      "region": "IN",
+      "sector": "technology",
+      "boards": [
+        {
+          "ats": "successfactors",
+          "token": "rmkcdn",
+          "board_url": "rmkcdn.successfactors.com",
+          "fetchable": false
+        }
+      ],
+      "status": "detected_unfetchable",
+      "resolved_via": "sniff",
+      "checked_at": "2026-05-29"
+    },
+    "ltimindtree": {
+      "name": "LTIMindtree",
+      "region": "IN",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "mphasis": {
+      "name": "Mphasis",
+      "region": "IN",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "hexaware-technologies": {
+      "name": "Hexaware Technologies",
+      "region": "IN",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "kpit-technologies": {
+      "name": "KPIT Technologies",
+      "region": "IN",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "coforge": {
+      "name": "Coforge",
+      "region": "IN",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "persistent-systems": {
+      "name": "Persistent Systems",
+      "region": "IN",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "entropik": {
+      "name": "Entropik",
+      "region": "IN",
+      "sector": "technology",
+      "boards": [
+        {
+          "ats": "smartrecruiters",
+          "token": "Entropik",
+          "board_url": "https://jobs.smartrecruiters.com/Entropik",
+          "fetchable": true
+        }
+      ],
+      "status": "verified",
+      "resolved_via": "discover",
+      "checked_at": "2026-05-29"
+    },
+    "sigtuple": {
+      "name": "SigTuple",
+      "region": "IN",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "eka-care": {
+      "name": "Eka.care",
+      "region": "IN",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "tredence": {
+      "name": "Tredence",
+      "region": "IN",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "niramai": {
+      "name": "Niramai",
+      "region": "IN",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "mu-sigma": {
+      "name": "Mu Sigma",
+      "region": "IN",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "turing": {
+      "name": "Turing",
+      "region": "IN",
+      "sector": "technology",
+      "boards": [
+        {
+          "ats": "greenhouse",
+          "token": "turing",
+          "board_url": "https://boards.greenhouse.io/turing",
+          "fetchable": true
+        }
+      ],
+      "status": "verified",
+      "resolved_via": "discover",
+      "checked_at": "2026-05-29"
+    },
+    "skit-ai": {
+      "name": "Skit.ai",
+      "region": "IN",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "highradius": {
+      "name": "HighRadius",
+      "region": "IN",
+      "sector": "technology",
+      "boards": [
+        {
+          "ats": "greenhouse",
+          "token": "highradius",
+          "board_url": "https://boards.greenhouse.io/highradius",
+          "fetchable": true
+        }
+      ],
+      "status": "verified",
+      "resolved_via": "discover",
+      "checked_at": "2026-05-29"
+    },
+    "wysa": {
+      "name": "Wysa",
+      "region": "IN",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "mindtickle": {
+      "name": "Mindtickle",
+      "region": "IN",
+      "sector": "technology",
+      "boards": [
+        {
+          "ats": "lever",
+          "token": "mindtickle",
+          "board_url": "https://jobs.lever.co/mindtickle",
+          "fetchable": true
+        }
+      ],
+      "status": "verified",
+      "resolved_via": "discover",
+      "checked_at": "2026-05-29"
+    },
+    "gnani-ai": {
+      "name": "Gnani.ai",
+      "region": "IN",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "greyorange": {
+      "name": "GreyOrange",
+      "region": "IN",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "avaamo": {
+      "name": "Avaamo",
+      "region": "IN",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "convin-ai": {
+      "name": "Convin.ai",
+      "region": "IN",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "icertis": {
+      "name": "Icertis",
+      "region": "IN",
+      "sector": "technology",
+      "boards": [
+        {
+          "ats": "oracle",
+          "token": "ocs",
+          "board_url": "ocs.oraclecloud.com/hcmUI/CandidateExperience",
+          "fetchable": false
+        }
+      ],
+      "status": "detected_unfetchable",
+      "resolved_via": "sniff",
+      "checked_at": "2026-05-29"
+    },
+    "eightfold-ai": {
+      "name": "Eightfold.ai",
+      "region": "IN",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "pixis": {
+      "name": "Pixis",
+      "region": "IN",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "clevertap": {
+      "name": "CleverTap",
+      "region": "IN",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "pepper-content": {
+      "name": "Pepper Content",
+      "region": "IN",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "whatfix": {
+      "name": "Whatfix",
+      "region": "IN",
+      "sector": "technology",
+      "boards": [
+        {
+          "ats": "smartrecruiters",
+          "token": "Whatfix",
+          "board_url": "https://jobs.smartrecruiters.com/Whatfix",
+          "fetchable": true
+        }
+      ],
+      "status": "verified",
+      "resolved_via": "discover",
+      "checked_at": "2026-05-29"
+    },
+    "moengage": {
+      "name": "MoEngage",
+      "region": "IN",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "devrev": {
+      "name": "DevRev",
+      "region": "IN",
+      "sector": "technology",
+      "boards": [
+        {
+          "ats": "greenhouse",
+          "token": "devrev",
+          "board_url": "https://boards.greenhouse.io/devrev",
+          "fetchable": true
+        }
+      ],
+      "status": "verified",
+      "resolved_via": "discover",
+      "checked_at": "2026-05-29"
+    },
+    "rubrik": {
+      "name": "Rubrik",
+      "region": "IN",
+      "sector": "technology",
+      "boards": [
+        {
+          "ats": "greenhouse",
+          "token": "rubrik",
+          "board_url": "https://boards.greenhouse.io/rubrik",
+          "fetchable": true
+        }
+      ],
+      "status": "verified",
+      "resolved_via": "discover",
+      "checked_at": "2026-05-29"
+    },
+    "druva": {
+      "name": "Druva",
+      "region": "IN",
+      "sector": "technology",
+      "boards": [
+        {
+          "ats": "greenhouse",
+          "token": "druva",
+          "board_url": "https://boards.greenhouse.io/druva",
+          "fetchable": true
+        }
+      ],
+      "status": "verified",
+      "resolved_via": "discover",
+      "checked_at": "2026-05-29"
+    },
+    "inmobi": {
+      "name": "InMobi",
+      "region": "IN",
+      "sector": "technology",
+      "boards": [
+        {
+          "ats": "greenhouse",
+          "token": "inmobi",
+          "board_url": "https://boards.greenhouse.io/inmobi",
+          "fetchable": true
+        }
+      ],
+      "status": "verified",
+      "resolved_via": "discover",
+      "checked_at": "2026-05-29"
+    },
+    "glance": {
+      "name": "Glance",
+      "region": "IN",
+      "sector": "technology",
+      "boards": [
+        {
+          "ats": "greenhouse",
+          "token": "glance",
+          "board_url": "https://boards.greenhouse.io/glance",
+          "fetchable": true
+        }
+      ],
+      "status": "verified",
+      "resolved_via": "discover",
+      "checked_at": "2026-05-29"
+    },
+    "amagi": {
+      "name": "Amagi",
+      "region": "IN",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "rocketium": {
+      "name": "Rocketium",
+      "region": "IN",
+      "sector": "technology",
+      "boards": [],
+      "status": "unresolved",
+      "resolved_via": null,
+      "checked_at": "2026-05-29"
+    },
+    "harness": {
+      "name": "Harness",
+      "region": "IN",
+      "sector": "technology",
+      "boards": [
+        {
+          "ats": "greenhouse",
+          "token": "harnessinc",
+          "board_url": "boards.greenhouse.io/harnessinc",
+          "fetchable": true
+        }
+      ],
+      "status": "verified",
+      "resolved_via": "sniff",
+      "checked_at": "2026-05-29"
+    },
+    "sprinklr": {
+      "name": "Sprinklr",
+      "region": "IN",
+      "sector": "technology",
+      "boards": [
+        {
+          "ats": "workday",
+          "token": "sprinklr/careers",
+          "board_url": "https://sprinklr.wd1.myworkdayjobs.com/wday/cxs/sprinklr/careers",
+          "fetchable": true
+        }
+      ],
+      "status": "verified",
+      "resolved_via": "sniff",
+      "checked_at": "2026-05-29"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "email_id": "fix-11",
+  "from": "talent@vercel.com",
+  "subject": "Vercel — application update for Pricing Product Manager",
+  "body": "Hi Jane,\n\nThanks again for your application to the Pricing PM role at Vercel.\n\nThe hiring team has reviewed your background and we're moving things forward. Someone from the team will be in touch within the next 5–7 days to walk you through next steps.\n\nNo action needed from you for now.\n\nBest,\nVercel Recruiting",
+  "date": "2026-05-29",
+  "thread": [],
+  "_expected": {
+    "class": "info",
+    "company": "Vercel",
+    "role": "Pricing Product Manager",
+    "suggested_action": "acknowledge",
+    "sentiment": "positive",
+    "confidence": "medium",
+    "_notes": "Stress case: positive tone, 'moving forward', 'in touch within 5–7 days' can fool a naive classifier into `screen`. But no time is proposed, no question is asked, body says 'no action needed'. It's `info` (positive). Triage must not pre-schedule."
+  }
+}

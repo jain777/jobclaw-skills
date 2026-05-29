@@ -1,0 +1,16 @@
+{
+  "email_id": "fix-01",
+  "from": "noreply@mercury.com",
+  "subject": "Update on your application for Senior Product Manager, API & Agentic Banking",
+  "body": "Hi Jane,\n\nThanks for your interest in Mercury and for taking the time to apply for the Senior PM, API & Agentic Banking role. After careful review, we've decided to move forward with other candidates whose experience more closely matches the team's current needs.\n\nWe wish you the best in your search and hope you'll keep us in mind for future opportunities.\n\nBest,\nThe Mercury Talent Team",
+  "date": "2026-05-29",
+  "thread": [],
+  "_expected": {
+    "class": "rejection",
+    "company": "Mercury",
+    "role": "Senior Product Manager, API & Agentic Banking",
+    "suggested_action": "acknowledge",
+    "sentiment": "negative",
+    "confidence": "high"
+  }
+}

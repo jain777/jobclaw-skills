@@ -1,0 +1,17 @@
+{
+  "email_id": "fix-06",
+  "from": "alex.t@stripe.com",
+  "subject": "Stripe Capital — Sr PM role (no prior application)",
+  "body": "Hi Jane,\n\nAlex from Stripe Capital here. I came across your work on Mercury's API platform and your earlier Plaid identity-API scaling — both directly relevant to a Sr PM role we're hiring for on the Capital team (lending infrastructure for SMBs).\n\nWould you be open to a 20-minute call to learn more? Happy to share comp and team details in advance if it helps.\n\nBest,\nAlex",
+  "date": "2026-05-29",
+  "thread": [],
+  "_expected": {
+    "class": "recruiter-outbound",
+    "company": "Stripe",
+    "role": "Sr PM, Capital",
+    "suggested_action": "reply-info",
+    "sentiment": "positive",
+    "confidence": "high",
+    "_notes": "No prior application by the user → recruiter-outbound, NOT screen. Action is reply-info (express interest or graceful decline)."
+  }
+}

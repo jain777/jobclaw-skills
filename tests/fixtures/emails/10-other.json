@@ -1,0 +1,14 @@
+{
+  "email_id": "fix-10",
+  "from": "devon@stealthco.com",
+  "subject": "Following up + open question",
+  "body": "Hey Jane,\n\nQuick follow-up on our chat at Fintech Devcon last month — also, would you be open to chatting about an early role at our (stealth) company? We're 4 people, pre-seed, building developer tools for the AI agent ecosystem.\n\nWe'd want to talk about the founding PM role; comp would be equity-heavy. But I also wanted to ask: do you know anyone good at our level (Sr PM) who's looking right now? Happy to help connect.\n\nLet me know,\nDevon",
+  "date": "2026-05-29",
+  "thread": ["[2026-04, Fintech Devcon] in-person meet at Devon's session"],
+  "_expected": {
+    "class": "other",
+    "suggested_action": "escalate",
+    "confidence": "low",
+    "_notes": "Multi-intent: post-event follow-up + recruiter-outbound + asking for referrals. No single class fits. Escalate to human review (request-human-input) for decomposition."
+  }
+}

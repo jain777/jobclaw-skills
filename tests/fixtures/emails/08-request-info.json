@@ -1,0 +1,26 @@
+{
+  "email_id": "fix-08",
+  "from": "neha.k@meesho.com",
+  "subject": "Meesho — Sr. PM Bangalore — a few quick details",
+  "body": "Hi Jeevesh,\n\nThanks for your application. Before we move ahead, could you share the following?\n\n- Current CTC (fixed + variable, in LPA)\n- Expected CTC\n- Notice period (in days)\n- Earliest joining date\n- Are you open to relocation to Bangalore?\n\nWe'll get back within 48 hours of receiving these.\n\nBest,\nNeha\nTalent Acquisition, Meesho",
+  "date": "2026-05-29",
+  "thread": [],
+  "_expected": {
+    "class": "request-info",
+    "company": "Meesho",
+    "role": "Sr. PM Bangalore",
+    "extraction": {
+      "asks": [
+        "Current CTC (fixed + variable, in LPA)",
+        "Expected CTC",
+        "Notice period (in days)",
+        "Earliest joining date",
+        "open to relocation to Bangalore"
+      ]
+    },
+    "suggested_action": "reply-info",
+    "sentiment": "neutral",
+    "confidence": "high",
+    "_notes": "IN-context request-info. The reply pulls from preferences.current_ctc, preferences.expected_ctc, preferences.notice_period, preferences.earliest_start. The relocation ask is yes/no from profile.open_to_relocation."
+  }
+}

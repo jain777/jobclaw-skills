@@ -1,0 +1,19 @@
+{
+  "email_id": "fix-03",
+  "from": "priya.r@anthropic.com",
+  "subject": "Re: Anthropic PM, Claude Code — next step",
+  "body": "Hi Jane,\n\nGreat chat yesterday. The team would like to move you to the next round — a 60-minute technical interview with two PMs and an engineer on the Claude Code team, focused on product sense + API platform strategy.\n\nNext week works on our side; please share 2–3 windows in the next 5 business days. I'll send a calendar invite once we lock a time.\n\nThanks,\nPriya",
+  "date": "2026-05-29",
+  "thread": ["[2026-05-27] 30-minute recruiter screen — went well per the user"],
+  "_expected": {
+    "class": "interview-invite",
+    "company": "Anthropic",
+    "role": "Product Manager, Claude Code",
+    "extraction": {
+      "asks": ["share 2–3 windows in the next 5 business days"]
+    },
+    "suggested_action": "reply-schedule",
+    "sentiment": "positive",
+    "confidence": "high"
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "email_id": "fix-07",
+  "from": "no-reply@greenhouse.io",
+  "subject": "We've received your application to Figma",
+  "body": "Hi Jane,\n\nThanks for applying to Figma. We've received your application for Product Manager, AI Growth.\n\nOur team is reviewing applications and you'll hear back if your background matches what we're looking for.\n\nWe appreciate your interest.\n\nThe Figma Talent Team",
+  "date": "2026-05-29",
+  "thread": [],
+  "_expected": {
+    "class": "info",
+    "company": "Figma",
+    "role": "Product Manager, AI Growth",
+    "suggested_action": "acknowledge",
+    "sentiment": "neutral",
+    "confidence": "high"
+  }
+}

@@ -1,0 +1,31 @@
+# OS / tooling cruft
+.DS_Store
+.playwright-mcp/
+
+# Python
+__pycache__/
+*.pyc
+
+# render-resume's isolated rendercv environment + scratch build dirs
+skills/render-resume/.venv/
+.rendercv_build/
+*.rendercv.yaml
+
+# Secrets
+.env
+
+# User-generated artifacts (the repo ships only the *.example files)
+/profile/master-profile.md
+/profile/master-profile.*.md
+!/profile/master-profile.example.md
+/jobs/
+/resumes/
+/scores/
+/interviews/
+/companies/
+/inbox/
+/requests/
+/coaching/
+
+# Note: knowledge/companies/{companies.csv, resolved.json} ARE committed (shipped catalog + token cache).
+.claude/

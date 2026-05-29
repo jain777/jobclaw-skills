@@ -1,0 +1,23 @@
+{
+  "email_id": "fix-04",
+  "from": "hiring@databricks.com",
+  "subject": "Databricks — Take-home for Sr. Product Manager, Databricks AI",
+  "body": "Hi Jane,\n\nThanks for moving forward with us. As part of the Sr. PM, Databricks AI loop, please complete the attached take-home assessment.\n\nLink: https://databricks.takehome.app/jane-doe-pm-2026\nDeadline: 2026-06-03 (5 business days from receipt)\nEstimated time: 4 hours\n\nPlease reply to confirm receipt and let us know if you need additional time.\n\nThanks,\nDatabricks Recruiting",
+  "date": "2026-05-29",
+  "thread": [],
+  "_expected": {
+    "class": "assessment",
+    "company": "Databricks",
+    "role": "Sr. Product Manager, Databricks AI",
+    "extraction": {
+      "links": [{"url": "https://databricks.takehome.app/jane-doe-pm-2026", "kind": "assessment"}],
+      "deadline": "2026-06-03",
+      "asks": ["reply to confirm receipt", "let us know if you need additional time"]
+    },
+    "suggested_action": "reply-accept",
+    "priority": "normal",
+    "sentiment": "neutral",
+    "confidence": "high",
+    "_notes": "5-day deadline = not urgent. Bumping to `urgent` only triggers when ≤48h."
+  }
+}

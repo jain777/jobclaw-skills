@@ -1,0 +1,28 @@
+{
+  "name": "jobclaw-skills",
+  "version": "0.1.0",
+  "description": "Open-source Claude Code skills that run your entire job hunt — profile, search, fit scoring, tailored resumes, cover letters, recruiter triage, interview prep, and offer negotiation. Bring your own keys; most skills need none.",
+  "author": {
+    "name": "Jeevesh Jain",
+    "url": "https://github.com/jain777"
+  },
+  "homepage": "https://github.com/jain777/jobclaw-skills",
+  "license": "MIT",
+  "skills": true,
+  "permissions": {
+    "allow": [
+      "Bash(python3:*)",
+      "WebSearch",
+      "WebFetch(domain:boards-api.greenhouse.io)",
+      "WebFetch(domain:api.lever.co)",
+      "WebFetch(domain:api.ashbyhq.com)",
+      "WebFetch(domain:api.smartrecruiters.com)",
+      "WebFetch(domain:myworkdayjobs.com)",
+      "WebFetch(domain:yc-oss.github.io)",
+      "WebFetch(domain:hn.algolia.com)",
+      "WebFetch(domain:api.adzuna.com)",
+      "WebFetch(domain:serpapi.com)",
+      "WebFetch(domain:api.firecrawl.dev)"
+    ]
+  }
+}
