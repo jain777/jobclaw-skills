@@ -18,7 +18,7 @@ context: fork
 A 360° brief on a company × role, grounded in real sources — every claim cites a URL. **Hard rules:** [`../_shared/RULES.md`](../_shared/RULES.md).
 
 ## Inputs
-- `company` (required) — name or canonical key.
+- `company` (required) — name or canonical key. **Known-info gate (RULES §6):** if not given inline, read `jobs/current.json` for `company`/`role` before asking.
 - `role` (optional but strongly recommended) — title at the target level.
 - Profile: `profile/master-profile.md` for the `fit_for_user` view (read `context:` for *direction only*; never echo).
 
@@ -70,3 +70,6 @@ A 360° brief on a company × role, grounded in real sources — every claim cit
 - [ ] `red_flags` are specific and sourced (or absent).
 - [ ] `fit_for_user` cites both a profile fact and a company fact per bullet.
 - [ ] `sources[]` at root deduplicates every URL used.
+
+## Next steps
+Brief saved. Next: `/prep-interview` (pre-interview) or `/coach-negotiation` (pre-offer).

@@ -72,3 +72,6 @@ Apply ONE per pass, then re-render and re-judge — never stack blind changes.
 
 ## Output
 A concise QA report: **PASS/FAIL**, final score, the **iteration log** (per pass: what the gate + rubric flagged → the one fix applied → the new result), and the final PDF path.
+
+## Next steps
+Resume passed QA. Next: `/write-cover-letter`, then apply — or `/apply-to-job` to finish the package.

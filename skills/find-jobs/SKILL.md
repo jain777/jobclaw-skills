@@ -77,11 +77,21 @@ Use every source available; **none are required** — degrade gracefully. Output
   it stamps `first_seen` and flags `is_new` so refreshes surface what's actually new.
 - **Recency:** `python3 scripts/jobstore.py filter --in <found>.json --max-age-days 30 --today <YYYY-MM-DD>` drops stale postings (undated kept by default).
 - **Filter** out `exclude_companies` and hard-constraint violations (onsite when `remote_only`; comp clearly below `min_base_salary` when known).
-- **Rank** by fit (role/seniority/industry/location match, recency, `is_new`). Don't run a full `score-fit` here — that's a separate per-job step; this is a cheap relevance sort.
+- **Rank** by fit — a **two-stage relevance pass** sharing the rubric in [`../../knowledge/relevance.md`](../../knowledge/relevance.md):
+  1. **Stage A — deterministic pre-rank + trim** (keeps token cost bounded). Write the profile's `target.*` slice to a small JSON (`roles`, `seniority`, `industries`, `locations`, `remote_only`, `keywords`, and `ai_titles` copied from [`../../knowledge/ai-roles.md`](../../knowledge/ai-roles.md) when targeting AI). **Never put the `context:` block in it.** Then:
+     ```
+     python3 scripts/prerank.py --in <found>.json --target target.json --today <YYYY-MM-DD> --top-n 25 --out <found>.json
+     ```
+     It stamps a `prerank_score`, writes the full sorted list to `--out`, and prints the **top-N** (default 25).
+  2. **Stage B — Claude-as-ranker.** Over the top-N + the full profile (read `context.career_goal` to DIRECT the score — never quote/echo it), assign each job a real **`fit_rank` 0-100** + a one-line **`fit_reason`** per `relevance.md` (semantic credit for transferable skills; the six factors). This is a single batched pass, not one call per job.
+  `fit_rank` is a **fast estimate** for sorting — **not** a full `score-fit` (that's the authoritative per-job step). Keep them directionally consistent.
 
 ## 5. Present & save
 
-- Show a ranked table: title · company · location · remote · source · posted · link (mark `is_new`).
-- Save the full normalized list to `jobs/found-<YYYY-MM-DD>.json` (create `jobs/` if needed).
+- Show a ranked table sorted by **`fit_rank`**: title · company · location · remote · source · posted · `fit_rank` · `fit_reason` · link (mark `is_new`).
+- Save the full normalized list (with `fit_rank`/`fit_reason`) to `jobs/found-<YYYY-MM-DD>.json` (create `jobs/` if needed).
 - Note which adapters ran vs. were skipped (and which key would unlock more), and how many companies were `detected_unfetchable` (reached via fallback or not).
-- Suggest `/score-fit` on the top results. Be concise; no emoji.
+- **When the user picks a job to pursue** (or names one), write it to `jobs/current.json` — `{company, role, url, job_id, jd_text, region, source, captured_at}` — so the apply chain (`score-fit` → `tailor-resume` → `write-cover-letter` → `answer-application-questions`) reuses the JD without re-asking (RULES §6).
+
+## Next steps
+Saved N jobs. Next: `/score-fit` on the top results for the authoritative score — or `/apply-to-job <job_id>` to run the full apply chain (score → tailor → cover letter → answers) in one go. No emoji.

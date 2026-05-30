@@ -59,3 +59,6 @@ If recipient / platform / goal is missing, ask once, batched.
 - [ ] No `context:` echo.
 - [ ] Verb openers vary across the body (Communication / Leadership categories).
 - [ ] Tone matches profile `Notes / voice`.
+
+## Next steps
+Message ready — you send it. After you reach out, `/infer-status` to track the touch.

@@ -65,3 +65,26 @@ profile when the user has a clear preference. Precedence at render time:
 
 Email + phone always render first (region-pack convention); the track ordering applies after them.
 rendercv handles wrapping; links in `links.other` render last unless `contact_priority` lifts them.
+
+## Proof-point coverage per track
+
+Drives build-profile's **§3c proof-point gap prompt** — "what a strong candidate for this target
+shows." Shared vocabulary in [`../../../knowledge/relevance.md`](../../../knowledge/relevance.md).
+For **AI roles, defer to the archetype proof points** in
+[`../../../knowledge/ai-roles.md`](../../../knowledge/ai-roles.md) (don't duplicate). For non-AI
+tracks, the 2–3 load-bearing proofs to check coverage for:
+
+| Track | Must-show proof points |
+|---|---|
+| software | a system built at scale (users/QPS/data), stack depth, OSS or shipped projects |
+| product | metrics moved (activation/retention/revenue), a 0→1 or 0→N ship, discovery → decision story |
+| marketing | a **portfolio / case study**, channel ownership, growth metrics (CAC, ROAS, reach, +%) |
+| design | a **portfolio**, shipped products, measurable UX impact, process (research → iteration) |
+| finance | deal/portfolio size, modeling/analysis, quantified outcomes, certifications (CFA/CPA) |
+| data | datasets/scale, models or dashboards shipped, a business metric moved, tools (SQL/Python) |
+| sales | quota attainment %, deal sizes, pipeline built, segments/markets owned |
+| founders-office | 0→1 initiatives owned, cross-functional wins, scope/ambiguity handled, metrics |
+| hr | programs run, headcount/retention metrics, systems implemented, stakeholders managed |
+
+Check these against the extracted Experience/Projects/Achievements; surface the **missing** ones in
+the single §3c prompt, framed by the target. Never invent the evidence — prompt for it or leave it.

@@ -42,6 +42,8 @@ use a slug like `<company>-<role-slug>` and tell the user where it was written.
   "strengths": ["..."],
   "gaps": ["..."],
   "work_auth_verdict": "non_issue | minor_note | major_filter | disqualifier",
+  "archetype": "ai_platform | agentic | technical_ai_pm | solutions_architect | forward_deployed | transformation | null",  // AI roles only (ai-roles.md)
+  "goal_alignment": "strong | neutral | weak | null",  // directional only — biases `recommendation`; NEVER a subscore, NEVER echoed (RULES.md §2)
   "profile_stale": false,             // true if [VERIFY] fields or staleness affected scoring
   "profile_missing": false            // true if scored against a pasted snippet, no master profile
 }
@@ -55,3 +57,9 @@ use a slug like `<company>-<role-slug>` and tell the user where it was written.
 - `missing_keywords` is the contract `tailor-resume` reads (its SKILL.md reuses this list). Keep it
   to keywords the resume could honestly incorporate — not aspirational skills the candidate lacks.
 - `work_auth_verdict` comes from `knowledge/work-authorization.md` applied to the **job's** region.
+- The five `subscores` still sum to 100 — their factor weights mirror `knowledge/relevance.md`, so
+  `score` stays **directionally consistent** with find-jobs `fit_rank` (same engine; `fit_rank` is the
+  fast estimate, `score` is authoritative).
+- `goal_alignment` and `archetype` are set per the rubric: `goal_alignment` is **directional only**
+  (biases `recommendation`, never a subscore, never echoed — RULES.md §2); `archetype` is non-null
+  only for genuine AI roles.

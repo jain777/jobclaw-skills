@@ -22,7 +22,12 @@ Judge a job against the user's profile the way a good recruiter + ATS would, and
      pastes now, and set `profile_missing: true` in the sidecar. Suggest `/build-profile` for next time.
    - **Stale** → if fields the score depends on are marked `[VERIFY]`, warn in the output and set
      `profile_stale: true`. Never credit `[VERIFY]` facts toward must-haves.
-2. The job: a pasted description, a URL to fetch, or an entry from `jobs/found-<date>.json` (ask which if unclear).
+2. The job: a pasted description, a URL to fetch, or an entry from `jobs/found-<date>.json`.
+   **Known-info gate (RULES §6):** if no job is given inline, read `jobs/current.json` (the job under
+   work) and use its `jd_text`/`url` — do not re-ask for the JD if it's already captured. After
+   resolving the job, **write/refresh `jobs/current.json`** (`{company, role, url, job_id, jd_text,
+   region, source, captured_at}`) so `tailor-resume` / `write-cover-letter` / `answer-application-questions`
+   reuse it without asking again. Only ask the user for a job if none is supplied and `current.json` is absent.
 
 ## Method (think like an ATS, then like a hiring manager)
 
@@ -38,13 +43,17 @@ Judge a job against the user's profile the way a good recruiter + ATS would, and
    - **AI/ML roles:** if the role is AI/ML, detect its **archetype** per
      [`../../knowledge/ai-roles.md`](../../knowledge/ai-roles.md) (AI Platform/LLMOps · Agentic ·
      Technical AI PM · Solutions Architect · Forward-Deployed · Transformation). Weight the `domain`
-     and `must_haves` sub-scores toward that archetype's proof points, and note the archetype in
-     `strengths`/`gaps`. Distinguish genuine AI roles from "AI" used only as a buzzword (title filter
-     in ai-roles.md).
+     and `must_haves` sub-scores toward that archetype's proof points, note it in `strengths`/`gaps`,
+     and **record `archetype` in the sidecar**. Distinguish genuine AI roles from "AI" used only as a
+     buzzword (title filter in ai-roles.md).
 
 2. **Grade each requirement** as **met / partial / missing**, citing profile evidence:
    - **met** — clear evidence in the resume; **partial** — adjacent/transferable experience, or only
      part of a compound requirement is shown; **missing** — no evidence. Don't credit skills not shown.
+   - **Match semantically, not literally** (the shared engine — [`../../knowledge/relevance.md`](../../knowledge/relevance.md)):
+     credit a skill demonstrated under a *different name* (a "Visual AI agent" shows computer vision;
+     "ran paid campaigns" shows performance marketing; "RAG" ≈ retrieval-augmented). Literal keyword
+     absence is **not** the same as missing evidence. But never credit `[VERIFY]` facts — not even as transferable.
    - **"X OR Y" requirements** — satisfied if the profile has *either*. Never penalize for lacking the
      other half of an OR.
    - **Ambiguous / underspecified JDs** — score conservatively, note the ambiguity in `gaps`, and don't
@@ -64,7 +73,16 @@ Judge a job against the user's profile the way a good recruiter + ATS would, and
 
    Then subtract itemized **penalties** for hard-constraint violations (onsite when remote-only;
    sponsorship not offered when needed per §0; comp clearly below `min_base_salary`). The final
-   `score` = sum(subscores) + sum(penalties), clamped to 0–100.
+   `score` = sum(subscores) + sum(penalties), clamped to 0–100. (Subscores still sum to 100 — the
+   factor weights mirror [`../../knowledge/relevance.md`](../../knowledge/relevance.md), so this
+   `score` stays directionally consistent with find-jobs `fit_rank`.)
+
+5. **Goal alignment (directional — not a subscore).** Read `context.career_goal` to judge whether
+   this role *advances the candidate's stated direction*; set `goal_alignment` ∈ `strong|neutral|weak`.
+   It **breaks ties / nudges the `recommendation`** (e.g. a borderline 70 that strongly serves the goal
+   → "apply"; one that pulls away → "apply_if_tailored"). It is **never a numeric subscore** (preserves
+   the 100-point sum) and is **never quoted, paraphrased, or echoed** into any output (RULES.md §2) —
+   it directs the verdict, it does not appear in it.
 
 ## Output
 
@@ -82,3 +100,6 @@ also write `scores/<job-id>.score.json` per [reference/score-schema.md](referenc
 (`subscores` must sum to the pre-penalty total). For one-off pasted JDs, skip the file unless asked.
 
 Be honest — a low score is more useful than a flattering one. No emoji.
+
+## Next steps
+Apply / Apply-if-tailored → `/tailor-resume` for this job (or `/apply-to-job` to assemble the whole package). Skip → move to the next job.

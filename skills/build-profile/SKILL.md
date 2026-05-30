@@ -9,7 +9,7 @@ when_to_use: >
   Use at the start of a job hunt, when onboarding a new user, when the user shares a
   resume/CV/LinkedIn export, or whenever profile/master-profile.md is missing or stale.
 user-invocable: true
-allowed-tools: Read, WebFetch, WebSearch, Write, Edit, Bash
+allowed-tools: Read, WebFetch, WebSearch, Write, Edit, Bash, mcp__playwright__browser_navigate, mcp__playwright__browser_snapshot
 ---
 
 # build-profile
@@ -21,11 +21,8 @@ Produce `profile/master-profile.md` from whatever the user already has, then fil
 Collect any of these the user provides; actively offer the options:
 - **Resume / CV** — see step 1a for PDFs (mandatory link-extractor first), then read the body with the Read tool.
 - **LinkedIn PDF** — read it. (Point them to LinkedIn → profile → *Resources* → *Save to PDF* if they don't have it.)
-- **AI-memory export** — if they haven't, point them to `profile/IMPORT_MEMORIES_PROMPT.md` and have them paste the result.
-- **Links** — fetch and mine:
-  - **GitHub**: `WebFetch https://api.github.com/users/<user>` and `/repos?sort=stars` for top repos, languages, bio. (Public, no key.)
-  - **Portfolio / personal site**: `WebFetch` the URL.
-  - **LinkedIn URL**: do **not** scrape — LinkedIn blocks it and it breaks ToS. Use the LinkedIn PDF instead; only record the URL.
+- **AI-memory (proactively offer it).** Ask once: *"Have you used ChatGPT, Claude, or Gemini for your job search or career? Paste this prompt into the one you use most and bring back the result — I'll fold in recent interviews, feedback, and career details you'd otherwise have to retype."* Then surface the prompt from [`../../profile/IMPORT_MEMORIES_PROMPT.md`](../../profile/IMPORT_MEMORIES_PROMPT.md) (it pulls only **job-search-relevant** memories, not everything). On ingest, merge **only new facts** — never duplicate what the resume/profile already has; mark uncertain items `[VERIFY]`.
+- **Links** — record every link, then **enrich** the user's own ones (see §1b). LinkedIn stays record-only (ToS).
 
 Read everything before asking anything.
 
@@ -64,6 +61,23 @@ The script also returns a **`status`** field — branch on it:
 
 After the extractor, use the Read tool for body text. For non-PDF inputs (markdown, pasted text,
 LinkedIn URLs), scan the text directly with regex for any `https?://…` matches.
+
+### 1b. Enrich the user's own links (don't just record URLs)
+
+A portfolio or personal site usually holds proof points the resume omits (projects, metrics, roles,
+skills). Mine the user's **own** links — portfolio, personal site, project pages, and GitHub beyond the
+API — with a graceful fallback ladder. Skip LinkedIn (record-only, ToS). Cap at the few most relevant
+links so onboarding stays fast.
+
+For each link, stop at the first tier that yields usable content:
+1. **GitHub** → `WebFetch https://api.github.com/users/<user>` + `/repos?sort=stars` (top repos, languages, bio). No key.
+2. **`WebFetch` the page** → extract real proof points from the readable HTML.
+3. **`WebSearch`** (when WebFetch returns an SPA shell / thin content) → search the person + domain/handle for indexed content (project write-ups, talks, press).
+4. **Playwright MCP** (only if the session exposes it — optional, not required) → `mcp__playwright__browser_navigate` then `mcp__playwright__browser_snapshot` to render a JS-only page and read it. If Playwright isn't available, **skip it** and ask the user to paste a few highlights instead.
+
+**Rules:** ingest only **new** facts not already in the resume/profile (no duplication); mark anything
+inferred (not explicitly stated by the user) as `[VERIFY]`; **never fabricate**. Summarize what you
+learned back to the user in one line per link ("Your portfolio shows X, Y — added as projects").
 
 ## 2. Know the track and region
 
@@ -105,6 +119,14 @@ The `context:` block is read by `find-jobs`, `score-fit`, and `tailor-resume` to
 
 Both fields are optional but high-value.
 
+### 3c. The single optional proof-point gap prompt
+
+Gaps aren't just blank fields — the highest-value gap is **evidence a strong candidate for *this target* would show but the resume doesn't**. Compute the expected proof points for the user's `target.tracks` (+ AI archetype if applicable) from the **"Proof-point coverage"** section of [reference/track-presets.md](reference/track-presets.md) (which points at the archetype proof points in [`../../knowledge/ai-roles.md`](../../knowledge/ai-roles.md) for AI tracks). Check coverage against the extracted Experience/Projects/Achievements, then ask **one** target-framed prompt:
+
+> *"Strong \<target track/archetype\> candidates usually show \<X / Y / Z\>. From your resume I can see \<X\>; I don't see \<Y, Z\> — anything to add there? (Paste or skip.)"*
+
+This is the fix for the case where a missing portfolio/case-study (marketing) or eval/LLMOps evidence (AI Platform) is the candidate's **#1 gap for their target**, not a generic blank. Frame it by the target, never invent the evidence. **One prompt. Dismissible. No follow-ups.** Shares the relevance vocabulary in [`../../knowledge/relevance.md`](../../knowledge/relevance.md).
+
 ## 4. Write the profile
 
 Write `profile/master-profile.md` following [reference/profile-schema.md](reference/profile-schema.md) exactly (YAML frontmatter + markdown sections). Rules:
@@ -117,3 +139,6 @@ Write `profile/master-profile.md` following [reference/profile-schema.md](refere
 ## 5. Confirm
 
 Show a tight summary (identity, target, # roles captured, # links captured, gaps still `[VERIFY]`) and tell the user they can now run `/find-jobs`. Keep tone encouraging and concise — no emoji.
+
+## Next steps
+Profile saved. Next: `/find-jobs` to pull matching roles — or `/apply-to-job <url>` to evaluate one specific job end-to-end.

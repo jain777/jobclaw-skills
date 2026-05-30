@@ -61,3 +61,6 @@ A career coach who already knows you. **Hard rules:** [`../_shared/RULES.md`](..
 - [ ] No verbatim `context:` quotes; paraphrases are implicit and non-recoverable.
 - [ ] Real, named resources only — no invented programs.
 - [ ] Multi-turn: last 8 messages retained; session file appended cleanly when `--session` set.
+
+## Next steps
+If you want an artifact, jump to `/tailor-resume`, `/write-outreach`, or `/find-jobs`.

@@ -93,3 +93,6 @@ Match the reply to an option (case-insensitive prefix + fuzzy). Return a structu
 - [ ] `timeout_default.action` is explicit and conservative for irreversible actions (default `abort` when in doubt).
 - [ ] `requests/<id>.json` always written in compose mode; never deleted in parse mode.
 - [ ] In parse mode, an unmatched reply falls through to `free_text`, not a guessed option.
+
+## Next steps
+Question composed/parsed. Resume the action that triggered it.

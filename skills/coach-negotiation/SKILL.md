@@ -28,7 +28,7 @@ Negotiate honestly, ask for what's reasonable, never auto-send. **Hard rules:** 
    }
    ```
 2. **Profile** — `profile/master-profile.md`.
-3. **Market comp** — one of: `companies/<slug>.json` (`compensation` block) · inline `--market "<range>"` · thin `WebSearch` sweep. **Never invent comp numbers.** If none of the three yields a sourced range, ask the user before proceeding.
+3. **Market comp** — resolve in this order (known-info gate, RULES §6): **(a) auto-read `companies/<company-slug>.json`** (slug the offer's company and look for a prior `research-company` brief's `compensation` block) → **(b)** inline `--market "<range>"` → **(c)** a thin `WebSearch` sweep. **Never invent comp numbers.** Only ask the user if all three miss — and when you fall back past (a), tell the user "no saved research found for <company>; pulling a fresh estimate (run `/research-company` for a deeper read)." Never silently re-ask for data a prior `research-company` run already captured.
 4. **Competing offers** *(optional, strongest leverage)* — `[{company, base, equity, status}]`.
 
 ## Method
@@ -86,3 +86,6 @@ Negotiate honestly, ask for what's reasonable, never auto-send. **Hard rules:** 
 - [ ] No `context:` echo.
 - [ ] "REVIEW BEFORE SENDING" present in output footer.
 - [ ] Region structure consistent (USD components or INR CTC structure, not mixed).
+
+## Next steps
+Counter drafted — you send it. Re-run `/coach-negotiation` with their reply when it lands.

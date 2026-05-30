@@ -20,6 +20,11 @@ Fill an application form from the master profile — **never invent**. **Hard ru
 
 ## Inputs
 
+**Known-info gate (RULES §6):** the `job` block (company/role/url) may be omitted — if absent, read
+`jobs/current.json` for it. All answers source from `profile/master-profile.md`; never re-ask the user
+for a fact (years_exp, work_auth, notice period, CTC) the profile already holds — flag a genuinely
+missing one rather than asking mid-form.
+
 ### Batch mode (preferred for JobClaw / multi-question forms)
 - `--in resumes/<slug>.app-questions.in.json`:
   ```jsonc
@@ -96,3 +101,6 @@ Markdown answer + a one-line `source_field` citation.
 - [ ] `flagged.length` = number of genuinely-unanswerable questions (the human-input queue).
 - [ ] No invented numbers / dates / certifications.
 - [ ] Sponsorship verdict derived from `work_auth` × **job's** region pack (not the applicant's region).
+
+## Next steps
+Answers ready. Submit the application, then `/infer-status` to log it.

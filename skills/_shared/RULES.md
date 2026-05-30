@@ -38,17 +38,28 @@ For work-authorization specifically, defer to the canonical resolution in [`../.
 
 The repo's brand voice is encouraging-coach, sentence-case, verb-led, **no emoji** — anywhere in any generated artifact, log line, or summary. (Lucide icons cover UI affordances when there is a UI; text outputs stay clean.)
 
+## 6. Known-info gate — never re-ask what's already captured
+
+Before asking the user for **anything**, check what the system already holds:
+
+1. The **master profile** (`profile/master-profile.md`) — identity, target, links, work-auth, region, CTC/notice, context.
+2. The **working job** (`jobs/current.json`) — the company/role/JD under work (see composition convention).
+3. The relevant **sidecars** for this skill (scores, tailor, company research, triage — see below).
+
+Only ask for fields that are **genuinely missing or `[VERIFY]`**, and ask them in **one batched prompt**, not drip-fed. Never re-request a job description, target role, region, work-auth, salary, or any profile fact another skill already collected — read it. If a value exists but looks stale (`[VERIFY]` or contradicted), confirm it in the same batch rather than re-collecting from scratch. The goal is a flawless flow: the user states each thing once.
+
 ---
 
 ## Composition convention (for context)
 
 Skills compose via JSON **sidecars** at known paths, not by calling each other:
 
+- `jobs/current.json` — the **job under work**: `{company, role, url, job_id, jd_text, region, source, captured_at}`. Written by `find-jobs` (on pick), `score-fit`, or the `apply-to-job` orchestrator. Read by `score-fit`, `tailor-resume`, `write-cover-letter`, `answer-application-questions`, `research-company` when no job is passed inline — so the JD is supplied **once** per application.
 - `scores/<job-id>.score.json` — written by `score-fit`, read by `tailor-resume`.
 - `resumes/<slug>.tailor.json` — written by `tailor-resume`, optionally read by `write-cover-letter` (keyword consistency).
 - `resumes/<slug>.cover-letter.json` — written by `write-cover-letter`, reserved for a future `/render-resume --kind cover-letter`.
-- `companies/<slug>.json` — written by `research-company`, optionally read by `prep-interview`, `coach-negotiation`.
+- `companies/<slug>.json` — written by `research-company`, read by `prep-interview` and `coach-negotiation` (auto-read by slug before asking).
 - `inbox/triage-<YYYY-MM-DD>.json` — written by `triage-inbox`, read by `infer-status`, `draft-reply`.
 - `requests/<request_id>.json` — written by `request-human-input` in compose mode; read by the optional JobClaw agent's HITL MCP.
 
-If a sidecar is absent, the consuming skill either degrades gracefully (thin in-line derivation) or asks the user — it never invents the missing data.
+If a sidecar is absent, the consuming skill either degrades gracefully (thin in-line derivation) or asks the user — it never invents the missing data. The full stage map + each skill's next step lives in [`../../knowledge/pipeline.md`](../../knowledge/pipeline.md).

@@ -112,3 +112,6 @@ See [reference/prep-rubric.md](reference/prep-rubric.md). Plus:
 - [ ] Every STAR bullet cites a profile fact (`experience[i]`, project, skill).
 - [ ] Checklist has ≥ 1 item per round.
 - [ ] Questions-to-ask-back includes ≥ 1 diplomatic raise of a `red_flag` from the brief (when one exists).
+
+## Next steps
+Prep brief ready. Next: `/mock-interview` to practice it.

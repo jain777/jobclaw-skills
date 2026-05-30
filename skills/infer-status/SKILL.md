@@ -99,3 +99,6 @@ With `--update tracker.json`: read JSON `{applications: [{job_id, ...}]}`; merge
 - [ ] No `accepted` without `--confirm-accept` *and* a prior `offer`.
 - [ ] `ghosted` only set when `days_since_last_contact ≥ ghost_days` AND current_status is non-terminal.
 - [ ] `next_action_due_on` is set when `next_action` is reply-ish; `null` when not.
+
+## Next steps
+Status updated. Next: `/draft-reply` with the suggested intent (or `/coach-negotiation` if it's an offer).

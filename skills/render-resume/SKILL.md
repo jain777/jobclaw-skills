@@ -127,3 +127,6 @@ skills/render-resume/.venv/bin/pip install "rendercv[full]"
 ## ATS guarantees
 
 All rendercv themes are single-column and produce selectable text with embedded hyperlink annotations. When a non-ATS-safe theme is selected, `render.py` prints `ATS-safe: no` plus an `ATS WARNING` **on stdout** (and a NOTE on stderr); the skill must relay that warning to the user (see §5). For portal applications, prefer the ATS-safe subset above.
+
+## Next steps
+PDF rendered. Next: run `/review-render` if it hasn't run yet, then `/write-cover-letter`.

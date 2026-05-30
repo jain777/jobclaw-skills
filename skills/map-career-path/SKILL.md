@@ -93,3 +93,6 @@ Show the user how others made the move, and where they'd need to grow. **Hard ru
 - [ ] Roadmap items are specific (no "get more experience").
 - [ ] "You already have" cites actual profile facts.
 - [ ] Graceful degrade without CSE keys (skill still produces a roadmap; just smaller N).
+
+## Next steps
+Roadmap ready. Next: `/find-jobs` filtered to bridge roles, then `/score-fit`.

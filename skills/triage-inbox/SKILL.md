@@ -96,3 +96,6 @@ A concise table per email: `id · class · company/role · action · priority ·
 - [ ] No `offer` is paired with `reply-accept`.
 - [ ] `confidence: low` rows are flagged with `suggested_action: escalate`.
 - [ ] Urgent items (assessment / interview-invite with ≤48h deadline) marked `priority: urgent`.
+
+## Next steps
+Triaged. Next: `/infer-status` to update the funnel, then `/draft-reply` for the suggested action.

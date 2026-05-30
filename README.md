@@ -28,17 +28,20 @@ skills/render-resume/.venv/bin/pip install "rendercv[full]"
 
 ## Quick start
 
-1. **Onboard** — `/build-profile` (share a resume/LinkedIn PDF). Writes `profile/master-profile.md`, the shared memory every other skill reads.
+1. **Onboard** — `/build-profile` (share a resume/LinkedIn PDF; it mines your links and can pull career memories from ChatGPT/Claude/Gemini). Writes `profile/master-profile.md`, the shared memory every other skill reads.
 2. **Hunt** — `/find-jobs`, then `/score-fit` on the interesting ones.
-3. **Apply** — `/tailor-resume` + `/render-resume` (→ ATS-safe PDF), `/write-cover-letter`, `/answer-application-questions`.
+3. **Apply** — `/apply-to-job <url>` runs the whole chain (score → tailored resume **PDF** → cover letter → form answers) in **auto-pilot or review** mode, stopping before anything is sent. Or run the pieces by hand: `/tailor-resume` (produces the PDF by default), `/write-cover-letter`, `/answer-application-questions`.
 4. **Manage** — `/triage-inbox` recruiter emails, `/infer-status`, `/draft-reply`; `/prep-interview` + `/mock-interview`; `/coach-negotiation` on offers.
 
-## Skill catalog (19)
+Every skill knows the pipeline (see [`knowledge/pipeline.md`](knowledge/pipeline.md)): it ends by naming the next step, reuses what's already captured (the profile + `jobs/current.json` + sidecars) instead of re-asking, and never fabricates.
 
-**Foundation**
+## Skill catalog (20)
+
+**Foundation & orchestration**
 | Skill | Does | Keys |
 |---|---|---|
-| [`build-profile`](skills/build-profile) | Turns resume / LinkedIn PDF / AI-memory + links into the canonical **master profile**. | none |
+| [`build-profile`](skills/build-profile) | Turns resume / LinkedIn PDF / AI-memory + **enriched links** into the canonical **master profile**. | none |
+| [`apply-to-job`](skills/apply-to-job) | Orchestrates the apply chain for one job (score → tailored resume PDF → cover letter → answers) in **auto-pilot or review** mode; stops before submit. | none |
 
 **Discovery**
 | Skill | Does | Keys |
@@ -51,8 +54,8 @@ skills/render-resume/.venv/bin/pip install "rendercv[full]"
 **Materials**
 | Skill | Does | Keys |
 |---|---|---|
-| [`tailor-resume`](skills/tailor-resume) | Job-specific, ATS-optimized resume (never fabricates) + sidecar. | none |
-| [`render-resume`](skills/render-resume) | Typesets to a polished **PDF** via [rendercv](https://github.com/rendercv/rendercv) (9 themes, clickable links, ATS-safe default). | rendercv |
+| [`tailor-resume`](skills/tailor-resume) | Job-specific, ATS-optimized resume — **renders the PDF by default** (+ visual QA); never fabricates. | rendercv |
+| [`render-resume`](skills/render-resume) | Typesets a resume to a polished **PDF** via [rendercv](https://github.com/rendercv/rendercv) (9 themes, clickable links, ATS-safe default). | rendercv |
 | [`review-render`](skills/review-render) | Visual-QA auto-fix loop for the rendered PDF (widows/overflow/fill). | rendercv |
 | [`write-cover-letter`](skills/write-cover-letter) | Tone-controlled, region-aware, one-page letter. | none |
 | [`answer-application-questions`](skills/answer-application-questions) | Correct, format-obeying answers to application form questions. | none |
@@ -77,6 +80,7 @@ skills/render-resume/.venv/bin/pip install "rendercv[full]"
 ## Knowledge packs
 
 Shared intelligence every skill reads:
+- [`knowledge/pipeline.md`](knowledge/pipeline.md) — the stage map + each skill's next step (how the skills chain).
 - [`knowledge/regions/`](knowledge/regions) — per-region (US, India) job sources, **visa/sponsorship logic**, resume & comp conventions. Add a country by copying `_schema.md`.
 - [`knowledge/work-authorization.md`](knowledge/work-authorization.md) — canonical work-auth enum + the cross-region rule (judge against the *job's* region).
 - [`knowledge/companies/`](knowledge/companies) — a 3500+ company catalog (`companies.csv`, all industries + YC + frontier AI) + a cached ATS resolver (`resolved.json`).
@@ -96,7 +100,7 @@ Copy `.env.example` → `.env`. Most skills need nothing. Job search gets strong
 
 ## Roadmap
 
-More region packs (Canada / EU / Singapore), Naukri & Internshala adapters (India consumer/FMCG recall), semantic ranking, and direct enterprise-ATS adapters. Job-search strategy + caveats: [`docs/JOB_SEARCH.md`](docs/JOB_SEARCH.md).
+More region packs (Canada / EU / Singapore), Naukri & Internshala adapters (India consumer/FMCG recall), and direct enterprise-ATS adapters. (Relevance ranking shipped — `find-jobs` computes a real `fit_rank` and `score-fit`/`build-profile` share one matching engine; see [`knowledge/relevance.md`](knowledge/relevance.md).) Job-search strategy + caveats: [`docs/JOB_SEARCH.md`](docs/JOB_SEARCH.md).
 
 ## License & credits
 

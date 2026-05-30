@@ -30,6 +30,15 @@ Real-shaped inputs for validating Batch 2 + 3 skills (and useful for Batch 1 too
 | `offers/offer-mercury-us.json` | US | base + equity (ISOs/4y/1y-cliff) + bonus + signing |
 | `offers/offer-meesho-india.json` | IN | CTC LPA (fixed + variable + ESOPs + retention) + notice period |
 
+## Relevance pre-rank (find-jobs stage A)
+
+| Fixture | Purpose |
+|---|---|
+| `jobs/prerank-input.json` | 5 jobs: `strong` (AI, remote, fresh), `undated` (ML, no date), `pm` (AI PM, onsite), `stale` (AI, 2024), `offrole` (Accountant). |
+| `jobs/prerank-target.json` | The `target.*` slice `prerank.py` consumes — **deliberately has no `context:` block** (the script must never need it; RULES.md §2). |
+
+**Expected** (`smoke.py check_prerank`, `--today 2026-05-29`): deterministic order **strong > undated > pm > stale > offrole**; `undated` outranks `offrole` (undated is recency-neutral, never bottomed); `--top-n 2` returns 2; `remote_only:true` widens the strong(remote)−pm(onsite) gap; garbage input → `[]` exit 0; output never contains a `context` field.
+
 ## How to use
 
 **Smoke-test `triage-inbox`** against the 12 emails — compare your output's `class` + `suggested_action` to each fixture's `_expected`. All 12 must match, including the 2 ambiguous ones.

@@ -1,0 +1,7 @@
+[
+  {"id": "strong", "title": "Senior AI Engineer", "company": "Acme AI", "location": "Remote", "remote": "remote", "posted_date": "2026-05-25", "tags": ["ai", "llm"], "description": "Build RAG pipelines and LLM agents in production.", "verified": true, "status": "active"},
+  {"id": "undated", "title": "Machine Learning Engineer", "company": "Data Co", "location": "Bengaluru", "remote": "onsite", "posted_date": null, "tags": ["ml", "ai"], "description": "Train and serve ML models; LLM fine-tuning.", "verified": true, "status": "active"},
+  {"id": "pm", "title": "AI Product Manager", "company": "Prod Inc", "location": "Bengaluru", "remote": "onsite", "posted_date": "2026-05-18", "tags": ["ai", "product"], "description": "Own the AI product roadmap and agentic features.", "verified": true, "status": "active"},
+  {"id": "stale", "title": "AI Engineer", "company": "Old Corp", "location": "San Francisco", "remote": "onsite", "posted_date": "2024-01-01", "tags": ["ai"], "description": "ML systems and evals.", "verified": true, "status": "active"},
+  {"id": "offrole", "title": "Accountant", "company": "Ledger Bank", "location": "Mumbai", "remote": "onsite", "posted_date": "2026-05-20", "tags": ["finance", "accounting"], "description": "Bookkeeping, audits, tax filing.", "verified": true, "status": "active"}
+]

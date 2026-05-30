@@ -8,6 +8,7 @@ Checks, in order:
   2. jobposting   — _jobposting.py pure functions (JSON-LD parse, freshness, aggregator)
   3. extract_links— extract_links.py on a synthetic PDF (finds embedded URIs, status ok)
   4. jobstore     — jobstore.py merge + filter (first_seen/is_new, recency)
+  4b. prerank     — prerank.py deterministic relevance sort (top-N, undated-neutral, no context leak)
   5. answer       — answer.py --validate-pair contract check
   6. to_rendercv  — build_cv_document on a minimal JSON-Resume (no rendercv needed)
   7. fixtures     — all email + offer fixtures parse and carry their _expected/offer blocks
@@ -113,6 +114,44 @@ def check_jobstore():
         record("jobstore filter drops stale, keeps undated", kept == {"a1", "c3"}, f"kept={sorted(kept)}")
 
 
+# 4b. prerank deterministic relevance --------------------------------------
+def check_prerank():
+    print("4b. prerank")
+    jobs_f = FIX / "jobs" / "prerank-input.json"
+    tgt_f = FIX / "jobs" / "prerank-target.json"
+    base = ["skills/find-jobs/scripts/prerank.py", "--in", str(jobs_f), "--target", str(tgt_f),
+            "--today", "2026-05-29"]
+    r1 = run(base + ["--top-n", "25"])
+    ranked = json.loads(r1.stdout)
+    order = [j["id"] for j in ranked]
+    record("prerank: strong AI role ranks #1", order and order[0] == "strong", f"order={order}")
+    record("prerank: off-role (accountant) ranks last", order and order[-1] == "offrole", f"order={order}")
+    record("prerank: undated relevant job beats off-role (not bottomed for being undated)",
+           "undated" in order and "offrole" in order and order.index("undated") < order.index("offrole"))
+    record("prerank: output carries no `context` field", "context" not in r1.stdout)
+    # deterministic across runs
+    r2 = run(base + ["--top-n", "25"])
+    record("prerank: deterministic across runs", r1.stdout == r2.stdout)
+    # top-n trims
+    rN = run(base + ["--top-n", "2"])
+    record("prerank: --top-n 2 returns exactly 2", len(json.loads(rN.stdout)) == 2)
+    # remote_only penalizes onsite — widen the strong(remote) vs pm(onsite) gap
+    scores = {j["id"]: j["prerank_score"] for j in ranked}
+    with tempfile.TemporaryDirectory() as d:
+        ro = pathlib.Path(d) / "t.json"
+        ro.write_text(json.dumps({**json.loads(tgt_f.read_text()), "remote_only": True}))
+        rro = json.loads(run(["skills/find-jobs/scripts/prerank.py", "--in", str(jobs_f),
+                              "--target", str(ro), "--today", "2026-05-29"]).stdout)
+        ro_scores = {j["id"]: j["prerank_score"] for j in rro}
+        gap0 = scores["strong"] - scores["pm"]
+        gap1 = ro_scores["strong"] - ro_scores["pm"]
+        record("prerank: remote_only deprioritizes onsite (gap widens)", gap1 > gap0, f"{gap0}→{gap1}")
+    # graceful degrade on garbage
+    g = subprocess.run([PY, "skills/find-jobs/scripts/prerank.py", "--today", "2026-05-29"],
+                       input='{"not":"a list"}', capture_output=True, text=True, cwd=ROOT)
+    record("prerank: garbage input → [] exit 0", g.returncode == 0 and json.loads(g.stdout) == [])
+
+
 # 5. answer.py validator ----------------------------------------------------
 def check_answer():
     print("5. answer validator")
@@ -159,9 +198,27 @@ def check_to_rendercv():
         record("to_rendercv builds a valid document", False, str(e))
 
 
-# 7. fixture integrity ------------------------------------------------------
+# 7. pipeline + orchestration wiring ---------------------------------------
+def check_pipeline():
+    print("7. pipeline/orchestration")
+    record("knowledge/pipeline.md exists", (ROOT / "knowledge" / "pipeline.md").exists())
+    aj = ROOT / "skills" / "apply-to-job" / "SKILL.md"
+    record("apply-to-job skill exists", aj.exists() and "name: apply-to-job" in (aj.read_text() if aj.exists() else ""))
+    rules = (ROOT / "skills" / "_shared" / "RULES.md").read_text()
+    record("RULES.md has known-info gate + current.json", "Known-info gate" in rules and "jobs/current.json" in rules)
+    # every skill ends with a Next steps block
+    skills = sorted(p for p in (ROOT / "skills").glob("*/SKILL.md"))
+    missing = [p.parent.name for p in skills if "## Next steps" not in p.read_text()]
+    record(f"all {len(skills)} skills have a Next-steps block", not missing, "missing: " + ",".join(missing))
+    # the JD-reuse convention reaches the consumers
+    consumers = ["score-fit", "tailor-resume", "write-cover-letter", "answer-application-questions", "research-company"]
+    no_ref = [c for c in consumers if "jobs/current.json" not in (ROOT / "skills" / c / "SKILL.md").read_text()]
+    record("consumers read jobs/current.json", not no_ref, "missing: " + ",".join(no_ref))
+
+
+# 8. fixture integrity ------------------------------------------------------
 def check_fixtures():
-    print("7. fixtures")
+    print("8. fixtures")
     emails = sorted((FIX / "emails").glob("*.json"))
     bad = []
     for e in emails:
@@ -185,7 +242,7 @@ def check_fixtures():
 def main():
     print(f"jobclaw-skills smoke tests (root: {ROOT})\n")
     for fn in (check_compile, check_jobposting, check_extract_links, check_jobstore,
-               check_answer, check_to_rendercv, check_fixtures):
+               check_prerank, check_answer, check_to_rendercv, check_pipeline, check_fixtures):
         try:
             fn()
         except Exception as e:

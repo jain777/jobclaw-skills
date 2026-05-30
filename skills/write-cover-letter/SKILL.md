@@ -19,11 +19,13 @@ Earn the reader the next 30 seconds. Open with one concrete reason this candidat
 ## Inputs
 1. **Profile:** `profile/master-profile.md`. Read `context:` for *direction only* — never quote.
 2. **Job:** pasted JD text, a URL (use `WebFetch`), or an entry from `jobs/found-<date>.json`.
+   **Known-info gate (RULES §6):** if no job is given inline, read `jobs/current.json` and use its
+   `jd_text`/`company`/`role` — do not re-ask for the JD when it's already captured upstream.
 3. **Tone:** `enthusiastic | confident | concise | warm` (default: `confident`).
 4. **Optional sidecar:** `resumes/<slug>.tailor.json` from a prior `tailor-resume` run — reuse its keyword list and `basics_overrides.summary` so the letter and the resume sing the same notes.
 5. **Optional score-fit sidecar:** `scores/<job-id>.score.json` — reuse `missing_keywords` to know what the resume already incorporated.
 
-If the job is missing, ask for it; the tone has a safe default.
+If no job is supplied **and** `jobs/current.json` is absent, ask for it; the tone has a safe default.
 
 ## Method
 
@@ -77,3 +79,6 @@ If the job is missing, ask for it; the tone has a safe default.
 - [ ] No salary, no address, no clichés.
 - [ ] Spelling matches region.
 - [ ] Verb openers vary across the 6–10 sentences that have them.
+
+## Next steps
+Cover letter ready. Next: `/answer-application-questions` for the form, then submit.

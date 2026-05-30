@@ -78,3 +78,6 @@ One reply, one intent, no auto-send. **Hard rules:** [`../_shared/RULES.md`](../
 - [ ] No `context:` echo.
 - [ ] For `reply-accept (offer)`: draft is an *acknowledgement*, not an acceptance; coach-negotiation recommended.
 - [ ] "Human sends" footer present.
+
+## Next steps
+Draft ready — you send it. After sending, `/infer-status` to advance the status.

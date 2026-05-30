@@ -1,42 +1,47 @@
-# Import your memories from Claude / ChatGPT / Gemini
+# Import your career memories from Claude / ChatGPT / Gemini
 
-Your AI assistant already knows a lot about you. Pull that into JobClaw so you don't retype your whole career.
+The AI assistant you've used for your job search already knows a lot about you — recent interviews,
+feedback, what you're aiming for. Pull **only the job-search-relevant parts** into JobClaw so you don't
+retype your career.
 
 ## Option A — paste this prompt into Claude / ChatGPT / Gemini
 
-Copy the block below into a chat with the assistant **that knows you best**, then paste its reply back to `/build-profile`.
+Copy the block below into a chat with the assistant **that knows your career best**, then paste its
+reply back to `/build-profile`. It deliberately asks for *only relevant* memories — not your whole chat
+history.
 
 ```
-Based on everything you remember about me and our past conversations, write a thorough
-professional dossier I can hand to a job-search assistant. Use clear markdown sections.
-Be specific and factual — do NOT invent anything; omit what you don't know.
+From everything you remember about me across our past conversations, extract ONLY what is
+relevant to my job search and career. Write it as clean markdown sections. Be specific and
+factual — do NOT invent anything, and OMIT anything you're unsure of or that isn't career-related
+(skip unrelated personal chatter, one-off questions, and trivia). If unsure about a fact, mark it
+[VERIFY] instead of guessing.
 
-Include:
-1. Identity: full name, current title, location, years of experience, work authorization.
-2. Target: roles I want next, seniority, locations / remote preference, salary expectations,
-   industries I like and ones I avoid, companies to exclude.
-3. Experience: each role — company, title, dates, and 2–4 quantified achievements.
-4. Education, certifications, languages.
-5. Skills: technical and domain, grouped.
-6. Projects / portfolio / open-source, with links if you know them.
-7. Links: LinkedIn, GitHub, portfolio, personal site.
-8. Constraints & preferences: relocation, sponsorship needs, travel, notice period,
-   plus how I like my writing to sound (tone, things I avoid).
+Include, only where you actually have it:
+1. Recent interviews & outcomes: companies, roles, rounds, what went well, feedback I got,
+   and any rejections or offers — most recent first.
+2. Career details not usually on a resume: scope, scale, key wins with numbers, leadership,
+   domains, things I'm proud of, things I'd reframe.
+3. What I'm targeting now: roles, seniority, locations / remote, comp expectations, industries
+   I like and ones I avoid, companies to target or exclude.
+4. Constraints & preferences: relocation, sponsorship/work-authorization, notice period,
+   start timing, and how I like my writing to sound (tone, things I avoid).
+5. Skills I've actually demonstrated (technical + domain), and any gaps I've mentioned.
+6. Links if you know them: LinkedIn, GitHub, portfolio, personal site.
 
-If you're unsure about a fact, mark it [VERIFY] rather than guessing.
+Keep it tight and relevant — quality over volume. Mark uncertain facts [VERIFY].
 ```
 
-## Option B — export your memory file
+## Option B — export your saved memory
 
-- **ChatGPT:** Settings → Personalization → Memory → review/save the entries, or Settings → Data Controls → Export data, and hand the relevant file to `/build-profile`.
-- **Claude:** copy your profile/preferences or any saved project context.
-- **Gemini:** Settings → Saved info / Activity, copy the relevant entries.
+- **ChatGPT:** Settings → Personalization → Memory (review the entries), or Settings → Data Controls → Export data — hand over the career-relevant parts.
+- **Claude:** copy your saved profile/preferences or relevant project context.
+- **Gemini:** Settings → Saved info / Activity — copy the career-relevant entries.
 
-Drop the exported text/file into the chat and run `/build-profile`.
+Drop the exported text into the chat and run `/build-profile`.
 
 ## Also helpful to provide
-- Your **resume** (PDF, docx, or text).
-- Your **LinkedIn PDF** (LinkedIn → your profile → *Resources* / *More* → *Save to PDF*).
-- Links: **GitHub** (SWE/PM), **portfolio** (design/marketing/product), **personal site**, **LinkedIn URL**.
+- Your **resume** (PDF, docx, or text) and **LinkedIn PDF** (LinkedIn → your profile → *Resources* → *Save to PDF*).
+- Links: **GitHub**, **portfolio**, **personal site**, **LinkedIn URL**.
 
-`build-profile` reads all of it, then asks you only what's still missing.
+`build-profile` reads all of it, folds in only what's new, and asks you only what's still missing.

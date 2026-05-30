@@ -1,0 +1,13 @@
+{
+  "_note": "The target slice prerank.py consumes. NO `context:` block — the script must never need it (RULES.md §2).",
+  "roles": ["AI Engineer", "Machine Learning Engineer", "AI Product Manager"],
+  "seniority": "senior",
+  "industries": ["technology", "ai"],
+  "locations": ["Remote", "Bengaluru"],
+  "remote_only": false,
+  "keywords": ["LLM", "RAG", "agents", "ML"],
+  "ai_titles": {
+    "positive": ["AI Engineer", "ML Engineer", "Machine Learning Engineer", "AI Product Manager"],
+    "negative": ["Accountant"]
+  }
+}

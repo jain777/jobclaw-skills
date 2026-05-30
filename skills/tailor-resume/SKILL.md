@@ -3,14 +3,13 @@ name: tailor-resume
 description: >
   Produce a job-specific, ATS-optimized resume from the user's master profile and a target
   job — reordering, reframing, and surfacing the most relevant real experience and keywords.
-  Enforces a content rubric (bullet shape, length, parallel grammar, metric coverage).
-  Writes both a markdown resume and a structured sidecar JSON for render-resume. Never
-  fabricates.
+  Enforces a content rubric (bullet shape, length, parallel grammar, metric coverage), then
+  renders a polished PDF by default (via render-resume) and visually QAs it. Never fabricates.
 when_to_use: >
   Use when the user wants a resume tailored to a specific job, usually after score-fit
   recommends applying. Needs profile/master-profile.md and a job description.
 user-invocable: true
-allowed-tools: Read, Write
+allowed-tools: Read, Write, Bash
 ---
 
 # tailor-resume
@@ -19,8 +18,8 @@ Turn the master profile into a resume aimed at one job — maximizing relevance 
 
 ## Inputs
 1. Profile: read `profile/master-profile.md` (frontmatter + body, plus any `[VERIFY]` flags — don't rely on unverified facts). If missing → `/build-profile`.
-2. Job: pasted description, URL, or an entry from `jobs/found-<date>.json`.
-3. (Optional) `score-fit` output for this job — reuse its "missing keywords" list.
+2. Job: pasted description, URL, or an entry from `jobs/found-<date>.json`. **Known-info gate (RULES §6):** if no job is given inline, read `jobs/current.json` — do not re-ask for the JD when score-fit/find-jobs already captured it.
+3. (Optional) `scores/<job-id>.score.json` from `score-fit` — reuse its `missing_keywords` list.
 
 ## The one hard rule
 **Never fabricate.** You may select, reorder, reframe, and re-emphasize the user's *real* experience and use the job's vocabulary for things they actually did. You may **not** invent roles, titles, dates, metrics, skills, or tools they don't have. If a must-have is genuinely absent, leave it out and flag it to the user — don't paper over it.
@@ -65,14 +64,14 @@ The profile has a `context:` block with `career_goal` and `additional_info`. **R
 - **Tools-without-outcomes** ("Used Jira, Figma, Notion" as a bullet).
 - **Naming the target company in Summary** ("Excited to join Stripe to…").
 
-## Output
+## Output — produce the PDF by default
 
-Write **both** files to `resumes/`:
+Write the resume content, then render it. Default output is a **sendable PDF**, not just markdown.
 
-1. **`resumes/<company>-<role-slug>.md`** — human-readable tailored markdown for review. Sections in the order from rule 10, in clean ATS-friendly markdown.
+### 1. Write the content files to `resumes/`
 
-2. **`resumes/<company>-<role-slug>.tailor.json`** — structured sidecar for `render-resume`. Shape:
-
+- **`resumes/<company>-<role-slug>.md`** — human-readable tailored markdown for review (sections per rule 10).
+- **`resumes/<company>-<role-slug>.tailor.json`** — structured sidecar:
    ```jsonc
    {
      "source_profile_path": "profile/master-profile.md",
@@ -80,24 +79,27 @@ Write **both** files to `resumes/`:
      "theme_hint": "engineeringresumes | classic | sb2nov | moderncv | ...",  // optional rendercv theme
      "contact_order": ["email","phone","linkedin","github","portfolio"],
      "contact_hidden": ["twitter"],                      // optional, per-job
-     "basics_overrides": {
-       "label": "<role-targeted subtitle>",
-       "summary": "<the tailored summary text>"
-     },
-     "content": {
-       "work": [ ... ],          // JSON-Resume work array, tailored
-       "skills": [ ... ],
-       "projects": [ ... ],
-       "education": [ ... ]
-     }
+     "basics_overrides": { "label": "<role-targeted subtitle>", "summary": "<tailored summary>" },
+     "content": { "work": [ ... ], "skills": [ ... ], "projects": [ ... ], "education": [ ... ] }
    }
    ```
+- **`resumes/<company>-<role-slug>.json`** — the **JSON-Resume intermediate** render-resume consumes. Assemble it from the profile + the tailored content (see [`../render-resume/reference/json-resume-schema.md`](../render-resume/reference/json-resume-schema.md)):
+  - `basics`: name, `label`/`summary` from `basics_overrides`, email, phone, location, and **`profiles[]` = every link in the master profile's `links:` block** (`{network, url}`, including `links.other`) so no link is lost; portfolio → `basics.url`.
+  - `work` / `skills` / `projects` / `education` from `content` (tailored).
+  - `meta`: `{ track, region, paper, theme }` (theme = `theme_hint` or `engineeringresumes`).
+  - **Never re-derive links by parsing the markdown** — read them from `links:`.
 
-   `render-resume` reads this sidecar (preferred) and merges it with `profile/master-profile.md` for anything not overridden. **Every link in the master profile's `links:` block (including `links.other`) survives into the output** — known networks in the header, the rest in a "Links" section — never re-derive links by parsing the markdown.
+### 2. Render the PDF (default) + visual QA
 
-Then show the user:
+```
+python3 skills/render-resume/scripts/render.py --data resumes/<slug>.json --out resumes/<slug>.pdf [--theme <theme>]
+```
+(`render.py` auto-runs the deterministic page/fill QA gate and prints an `ATS-safe: yes/no` line — relay the warning if a styled theme was used.) Then run the **`review-render`** vision-QA loop on the PDF (render → screenshot → rubric → one fix → re-render, bounded) — the resume isn't "done" until it passes. If `rendercv` isn't installed, render.py writes the `.rendercv.yaml` and prints install guidance (exit 0) — tell the user to install it (README) or run `/render-resume` once set up; the content files are still produced.
+
+### 3. Report
 - A **2–4 line rationale**: what you emphasized, what you cut, which keywords you added.
-- Any **honesty flags**: must-haves the user genuinely lacks (so they decide how to address them).
-- Any **rubric warnings**: bullets that need metrics, sections that exceeded length caps.
+- Any **honesty flags**: must-haves the user genuinely lacks.
+- Any **rubric / QA warnings** and the **PDF path**.
 
-Suggest `/render-resume` next (defaults to the `engineeringresumes` theme; user can pass `--theme classic|sb2nov|moderncv|auto|…`), then `/write-cover-letter` when available. No emoji.
+## Next steps
+Resume PDF ready (`resumes/<slug>.pdf`). Next: `/write-cover-letter` for this job, then submit — or `/apply-to-job` to assemble the cover letter + form answers in one pass. No emoji.

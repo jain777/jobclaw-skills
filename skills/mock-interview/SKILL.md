@@ -71,3 +71,6 @@ Practice live. **Hard rules:** [`../_shared/RULES.md`](../_shared/RULES.md). Rep
 - [ ] Strengths + improvements cite specific Q ids.
 - [ ] `userAnswer` is verbatim (typos preserved).
 - [ ] No track-mismatched questions.
+
+## Next steps
+Scored. Next: re-run `/prep-interview` on the weak areas, or `/research-company` for more depth.
