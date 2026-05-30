@@ -26,6 +26,8 @@ python3 -m venv skills/render-resume/.venv
 skills/render-resume/.venv/bin/pip install "rendercv[full]"
 ```
 
+**Check your setup anytime** with `python3 scripts/doctor.py` — it reports whether rendercv is installed (the only install-required dependency, for resume PDFs) and which optional API keys are set. The skills flag a missing dependency **up front** and offer to install it, rather than failing mid-task.
+
 ## Quick start
 
 1. **Onboard** — `/build-profile` (share a resume/LinkedIn PDF; it mines your links and can pull career memories from ChatGPT/Claude/Gemini). Writes `profile/master-profile.md`, the shared memory every other skill reads.

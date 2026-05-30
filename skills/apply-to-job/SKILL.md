@@ -31,7 +31,7 @@ Default to **review** if the user doesn't choose. Both modes obey the same guard
 
 ## Chain
 
-0. **Profile check.** If `profile/master-profile.md` is missing → run `/build-profile` first (or stop and say so).
+0. **Preflight (notify the user before starting).** Run `python3 scripts/doctor.py`. If **rendercv is missing**, tell the user now (it's needed for the resume PDF later in the chain) and offer the one-time install — don't discover it mid-chain. Then check `profile/master-profile.md`: if missing → run `/build-profile` first (or stop and say so).
 1. **Capture the job once.** Resolve the JD (fetch the URL / use the pasted text / look up the `job_id`) and write `jobs/current.json` = `{company, role, url, job_id, jd_text, region, source, captured_at}`. Every downstream skill reads this — the JD is supplied **once** (RULES §6).
 2. **`score-fit`.** Run it against `jobs/current.json`.
    - **Skip / low fit:** in **auto** mode, stop and report the one-line reason (offer: "apply anyway?"); in **review** mode, ask whether to proceed.

@@ -140,5 +140,7 @@ Write `profile/master-profile.md` following [reference/profile-schema.md](refere
 
 Show a tight summary (identity, target, # roles captured, # links captured, gaps still `[VERIFY]`) and tell the user they can now run `/find-jobs`. Keep tone encouraging and concise — no emoji.
 
+**Heads-up on setup (mention once, now).** Run `python3 scripts/doctor.py` to check dependencies. Everything works with no install **except producing resume PDFs**, which needs **rendercv** (a one-time install: `python3 -m venv skills/render-resume/.venv && skills/render-resume/.venv/bin/pip install "rendercv[full]"`). Flag this here so it's installed before the user reaches `/tailor-resume`, not mid-render. (API keys are all optional; doctor lists which strengthen find-jobs/research.)
+
 ## Next steps
 Profile saved. Next: `/find-jobs` to pull matching roles — or `/apply-to-job <url>` to evaluate one specific job end-to-end.

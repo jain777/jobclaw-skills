@@ -1,6 +1,6 @@
 {
   "name": "jobclaw-skills",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Open-source Claude Code skills that run your entire job hunt — profile, search, fit scoring, tailored resumes, cover letters, recruiter triage, interview prep, and offer negotiation. Bring your own keys; most skills need none.",
   "author": {
     "name": "Jeevesh Jain",

@@ -91,6 +91,12 @@ Write the resume content, then render it. Default output is a **sendable PDF**, 
 
 ### 2. Render the PDF (default) + visual QA
 
+**Preflight first (so the dependency isn't a surprise mid-flow):** run `python3 scripts/doctor.py`. If
+it reports **rendercv MISSING**, tell the user up front before rendering — *"the PDF needs rendercv (one-time
+install): `python3 -m venv skills/render-resume/.venv && skills/render-resume/.venv/bin/pip install
+\"rendercv[full]\"` — install now, or I'll hand you the markdown + content files and you render later?"* —
+and only `pip install` on their go-ahead. With rendercv present, render:
+
 ```
 python3 skills/render-resume/scripts/render.py --data resumes/<slug>.json --out resumes/<slug>.pdf [--theme <theme>]
 ```

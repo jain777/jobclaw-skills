@@ -36,7 +36,7 @@ def run(args, **kw):
 def check_compile():
     print("1. compile")
     scripts = sorted(
-        p for d in ("skills", "knowledge") for p in (ROOT / d).rglob("*.py")
+        p for d in ("skills", "knowledge", "scripts") for p in (ROOT / d).rglob("*.py")
         if ".venv" not in p.parts and "__pycache__" not in p.parts
     )
     bad = []
@@ -214,6 +214,16 @@ def check_pipeline():
     consumers = ["score-fit", "tailor-resume", "write-cover-letter", "answer-application-questions", "research-company"]
     no_ref = [c for c in consumers if "jobs/current.json" not in (ROOT / "skills" / c / "SKILL.md").read_text()]
     record("consumers read jobs/current.json", not no_ref, "missing: " + ",".join(no_ref))
+    # dependency preflight: doctor.py runs + reports rendercv; resume skills preflight it
+    r = run(["scripts/doctor.py", "--json"])
+    try:
+        d = json.loads(r.stdout)
+        record("doctor.py runs + reports rendercv", "rendercv" in d and "ok" in d["rendercv"])
+    except Exception as e:
+        record("doctor.py runs + reports rendercv", False, str(e))
+    pf = [s for s in ("render-resume", "tailor-resume", "apply-to-job")
+          if "doctor.py" not in (ROOT / "skills" / s / "SKILL.md").read_text()]
+    record("resume/orchestrator skills preflight the dependency", not pf, "missing: " + ",".join(pf))
 
 
 # 8. fixture integrity ------------------------------------------------------

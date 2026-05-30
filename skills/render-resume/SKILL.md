@@ -16,6 +16,22 @@ allowed-tools: Read, Write, Bash
 
 Typeset a resume into a clean PDF with [rendercv](https://github.com/rendercv/rendercv) (a Typst-based renderer). This skill is format-only — content/region decisions are made upstream by `tailor-resume` (which applies region conventions); here we just produce the file. rendercv embeds links as real PDF hyperlink annotations, so contact links are clickable and ATS-extractable with no LaTeX workarounds.
 
+## 0. Preflight — check the dependency FIRST (don't fail mid-render)
+
+Before doing any work, confirm the one install-required dependency is present:
+
+```
+python3 scripts/doctor.py
+```
+
+If it reports **rendercv MISSING**, tell the user **up front** — before building anything:
+
+> *"Rendering a PDF needs rendercv (a one-time install). Want me to set it up now?*
+> *`python3 -m venv skills/render-resume/.venv && skills/render-resume/.venv/bin/pip install \"rendercv[full]\"`*
+> *Or I can produce the resume content + the rendercv `.yaml` now and you render once it's installed."*
+
+Only run the install on the user's go-ahead (it's a real `pip install`). Do **not** silently attempt a render that will fail and then ask — surface the dependency and the choice first. If rendercv is present, skip straight to step 1.
+
 ## 1. Get the content
 
 In priority order:
