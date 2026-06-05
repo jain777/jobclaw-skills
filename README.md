@@ -1,33 +1,85 @@
 # JobClaw Skills
 
-Open-source [Agent Skills](https://agentskills.io) that run your **entire job hunt** — onboarding, search, fit scoring, tailored resumes, cover letters, application answers, recruiter-inbox triage, interview prep, and offer negotiation. Each skill is a self-contained `SKILL.md` workflow.
+<p align="center">
+  <em>Your entire job hunt, run from inside your AI coding agent.</em><br>
+  Onboarding, search, fit scoring, tailored resumes, cover letters, recruiter triage, interview prep, and negotiation —<br>
+  <strong>20 portable skills, one master profile, every word grounded in your real experience.</strong>
+</p>
 
-**Portable across runtimes** — the same skills run in **Claude Code, Codex, Cursor, Hermes, and OpenClaw** (they follow the open agent-skills standard). See [Use with your runtime](#use-with-your-runtime) below.
+<p align="center">
+  <img src="https://img.shields.io/badge/Claude_Code-000?style=flat&logo=anthropic&logoColor=white" alt="Claude Code">
+  <img src="https://img.shields.io/badge/Codex-111827?style=flat&logo=openai&logoColor=white" alt="Codex">
+  <img src="https://img.shields.io/badge/Cursor-0A0A0A?style=flat&logo=cursor&logoColor=white" alt="Cursor">
+  <img src="https://img.shields.io/badge/Hermes-6E56CF?style=flat&logo=gnometerminal&logoColor=white" alt="Hermes">
+  <img src="https://img.shields.io/badge/OpenClaw-1F6FEB?style=flat&logo=openclaw&logoColor=white" alt="OpenClaw">
+  <img src="https://img.shields.io/badge/Agent_Skills-SKILL.md-2EAD33?style=flat" alt="Agent Skills standard">
+  <img src="https://img.shields.io/badge/Python_3-stdlib-3776AB?style=flat&logo=python&logoColor=white" alt="Python 3 stdlib">
+  <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="MIT">
+</p>
+
+---
+
+## What is this
+
+Open-source [Agent Skills](https://agentskills.io) that run your **entire job hunt** from inside an AI coding agent. Each skill is a self-contained `SKILL.md` workflow; together they form a pipeline that:
+
+- **Onboards you once** — a resume / LinkedIn PDF (links and all) becomes the canonical **master profile** every other skill reads
+- **Finds and scores jobs** — 13 pluggable adapters (ATS-direct, SmartRecruiters, YC, HN…), deduped and freshness-verified, ranked against your profile
+- **Builds the materials** — ATS-optimized tailored resume **PDFs**, cover letters, and application-form answers
+- **Runs the recruiter loop** — classifies inbox emails, infers application status, drafts tone-matched replies
+- **Preps the human moments** — interview question banks + mock interviews, and offer-negotiation coaching
+
+> **This is a filter, not a spray-and-pray tool.** The skills never fabricate, never echo your private goals into anything a recruiter sees, and **never submit anything for you** — every artifact stops before send so you have the final call. See [`skills/_shared/RULES.md`](skills/_shared/RULES.md).
 
 **Bring your own keys — but most skills need none, because the model itself is the engine.** ~14 of the 20 skills are pure reasoning (no external API); only job search and company research use optional data-API keys.
 
 These are the reusable **brain** behind JobClaw (an optional autonomous job-hunt agent) — but they stand alone: run them yourself in any supported runtime, no agent required.
 
+## Features
+
+| Feature | Description |
+|---|---|
+| **One master profile** | Onboard once from a resume/LinkedIn PDF (mines embedded links, can import ChatGPT/Claude/Gemini career memories); every skill reads it, nothing is re-asked. |
+| **Multi-source search** | 13 adapters across Greenhouse/Lever/Ashby/Workday/SmartRecruiters/Teamtailor/YC/Cutshort/HN + Adzuna/SerpApi/Firecrawl, deduped across runs and verified live for freshness. |
+| **Fit scoring** | ATS-style match % + matched/missing keywords + gaps + an apply-or-skip call, work-authorization aware (judged against the *job's* region). |
+| **ATS resume PDFs** | Tailored, keyword-aligned resumes rendered via [rendercv](https://github.com/rendercv/rendercv) (9 themes, clickable links, ATS-safe default) with a visual-QA auto-fix loop. |
+| **Recruiter inbox loop** | Classify → infer status → draft reply, driven by a shared email-class × application-status taxonomy. |
+| **Interview + negotiation** | Question banks with STAR talking points, a text mock-interview loop with a scored report, and leverage-based counter-offer drafts. |
+| **Region intelligence** | Per-region (US, India) sources, sponsorship logic, resume/comp conventions — add a country by copying one schema file. |
+| **Human-in-the-loop** | The model evaluates and drafts; you decide and send. No auto-submit, ever. |
+| **Never fabricates** | Selects, reorders, and reframes real experience; flags genuine gaps instead of inventing them. |
+
+## Quick start
+
+```bash
+# 1. Clone
+git clone https://github.com/jain777/jobclaw-skills && cd jobclaw-skills
+
+# 2. Wire it into your agent (symlinks skills/ + generates Cursor rules; idempotent)
+./scripts/install.sh                  # all runtimes — or: codex | cursor | hermes | openclaw | claude
+
+# 3. (Optional) install rendercv for resume PDFs, then check your setup
+python3 -m venv skills/render-resume/.venv
+skills/render-resume/.venv/bin/pip install "rendercv[full]"
+python3 scripts/doctor.py             # reports rendercv + which optional API keys are set
+
+# 4. Open your agent in this directory and onboard
+#    e.g. /build-profile  (share a resume/LinkedIn PDF)
+```
+
 ## Use with your runtime
 
-Clone this repo, then wire it into your agent with one command:
-
-```
-git clone https://github.com/jain777/jobclaw-skills && cd jobclaw-skills
-./scripts/install.sh            # wires every runtime found below
-```
-
-`install.sh` (a thin, stdlib-only wrapper over `scripts/setup_runtime.py`) symlinks `skills/` into each runtime's discovery path and generates Cursor's rule files. It's idempotent; pass a runtime name to wire just one, `--global` for user-level dirs, or `--copy` on Windows / restricted filesystems.
+These follow the open agent-skills standard (`SKILL.md`), so the **same `skills/` directory** drives every runtime. `install.sh` (a stdlib-only wrapper over `scripts/setup_runtime.py`) links `skills/` into each runtime's discovery path; pass `--global` for user-level dirs, or `--copy` on Windows / restricted filesystems.
 
 | Runtime | Wire it | Then invoke |
 |---|---|---|
-| **Claude Code** | install the plugin (below), or `./scripts/install.sh claude` | `/skill-name` |
+| **Claude Code** | plugin (below), or `./scripts/install.sh claude` | `/skill-name` |
 | **Codex** | `./scripts/install.sh codex` (links `.agents/skills`) | `/skills`, `$mention`, or auto |
 | **Cursor** | `./scripts/install.sh cursor` (generates `.cursor/rules/*.mdc`) | auto-attach, or `@rule-name` |
 | **Hermes** | native (`./skills/`); `--global` links `~/.hermes/skills/` | auto (description-gated) |
 | **OpenClaw** | native — run with this repo as the workspace | `openclaw skills …` or auto |
 
-Every runtime also reads [`AGENTS.md`](AGENTS.md) (the runtime-neutral guide). Full matrix, invocation details, and tool-namespacing notes: [`docs/RUNTIMES.md`](docs/RUNTIMES.md).
+Every runtime also reads [`AGENTS.md`](AGENTS.md), the runtime-neutral guide. Full matrix, invocation details, and tool-namespacing notes: [`docs/RUNTIMES.md`](docs/RUNTIMES.md).
 
 **Claude Code plugin (one command):**
 
@@ -38,23 +90,58 @@ Every runtime also reads [`AGENTS.md`](AGENTS.md) (the runtime-neutral guide). F
 
 (Replace `jain777/jobclaw-skills` with your fork/repo. The plugin auto-loads every skill in `skills/`.)
 
-**For `render-resume`** (the only skill with a non-Python dependency), install [rendercv](https://github.com/rendercv/rendercv) once:
+## Usage
+
+Invoke a skill by name (slash command in Claude Code / Cursor / Codex; description-matched auto-invoke in Hermes / OpenClaw):
 
 ```
-python3 -m venv skills/render-resume/.venv
-skills/render-resume/.venv/bin/pip install "rendercv[full]"
+/build-profile                 → onboard: resume/LinkedIn PDF → master profile
+/find-jobs                     → search + rank jobs against your profile
+/score-fit                     → ATS-style fit score + apply/skip call for one job
+/apply-to-job <url>            → full chain: score → resume PDF → cover letter → answers (stops before submit)
+/tailor-resume                 → job-specific ATS resume, rendered to PDF + visually QA'd
+/write-cover-letter            → one-page, region-aware cover letter
+/answer-application-questions  → format-obeying answers to a form's questions
+/triage-inbox                  → classify a recruiter email + extract dates/links/asks
+/infer-status                  → canonical application status + next action
+/draft-reply                   → tone-matched reply for a chosen intent
+/research-company              → comp, day-to-day, growth, sentiment, red flags
+/prep-interview                → likely questions + STAR talking points
+/mock-interview                → text interview loop + scored report
+/coach-negotiation             → leverage analysis + ranges + a draft counter (you send it)
+/career-coach                  → open Q&A loaded with your profile
+/write-outreach                → cold recruiter/referral message with one CTA
+/map-career-path               → transition examples + a gap roadmap
 ```
 
-**Check your setup anytime** with `python3 scripts/doctor.py` — it reports whether rendercv is installed (the only install-required dependency, for resume PDFs) and which optional API keys are set. The skills flag a missing dependency **up front** and offer to install it, rather than failing mid-task.
+Or just paste a job URL or description — `apply-to-job` / `score-fit` auto-detect it and capture the job once (`jobs/current.json`), so you never retype the JD.
 
-## Quick start
+## How it works
 
-1. **Onboard** — `/build-profile` (share a resume/LinkedIn PDF; it mines your links and can pull career memories from ChatGPT/Claude/Gemini). Writes `profile/master-profile.md`, the shared memory every other skill reads.
-2. **Hunt** — `/find-jobs`, then `/score-fit` on the interesting ones.
-3. **Apply** — `/apply-to-job <url>` runs the whole chain (score → tailored resume **PDF** → cover letter → form answers) in **auto-pilot or review** mode, stopping before anything is sent. Or run the pieces by hand: `/tailor-resume` (produces the PDF by default), `/write-cover-letter`, `/answer-application-questions`.
-4. **Manage** — `/triage-inbox` recruiter emails, `/infer-status`, `/draft-reply`; `/prep-interview` + `/mock-interview`; `/coach-negotiation` on offers.
+```
+   /build-profile                profile/master-profile.md  ── the shared memory ──┐
+        │                                                                          │
+        ▼                                                                          │
+   /find-jobs ──► /score-fit ──► apply or skip                                     │
+                      │            │ (>= threshold)                                │
+                      │            ▼                                               │
+                      │     /apply-to-job  ──►  /tailor-resume (PDF)               │
+                      │                          /write-cover-letter        reads ─┤
+                      │                          /answer-application-questions     │
+                      │                                  │                         │
+                      │                          stops before submit — you send    │
+                      ▼                                                            │
+   recruiter loop:  /triage-inbox ──► /infer-status ──► /draft-reply        reads ─┤
+                                                                                   │
+   interview:       /research-company ──► /prep-interview ──► /mock-interview      │
+                                                                                   │
+   offer:           /coach-negotiation  (draft counter — you send)          reads ─┘
 
-Every skill knows the pipeline (see [`knowledge/pipeline.md`](knowledge/pipeline.md)): it ends by naming the next step, reuses what's already captured (the profile + `jobs/current.json` + sidecars) instead of re-asking, and never fabricates.
+   Skills compose through JSON sidecars (jobs/current.json, scores/, resumes/,
+   companies/, inbox/), not framework calls — so the chain runs on any runtime.
+```
+
+Full stage map: [`knowledge/pipeline.md`](knowledge/pipeline.md).
 
 ## Skill catalog (20)
 
@@ -108,6 +195,29 @@ Shared intelligence every skill reads:
 - [`knowledge/ai-roles.md`](knowledge/ai-roles.md) — AI title filter + role archetypes.
 - [`knowledge/status/taxonomy.md`](knowledge/status/taxonomy.md) — email-class × application-status decision table.
 
+## Project structure
+
+```
+jobclaw-skills/
+├── AGENTS.md                  # Runtime-neutral entry point (Codex / Cursor / Hermes)
+├── CLAUDE.md                  # Claude Code contributor notes
+├── skills/                    # 20 SKILL.md skills (+ _shared/RULES.md, the canon)
+│   └── <verb-noun>/
+│       ├── SKILL.md           # one skill workflow
+│       ├── reference/         # optional schemas / rubrics
+│       └── scripts/           # optional Python (stdlib) helpers
+├── knowledge/                 # shared packs: regions, companies, ai-roles, status, pipeline
+├── scripts/
+│   ├── install.sh             # wire skills into a runtime (wrapper)
+│   ├── setup_runtime.py       # per-runtime discovery wiring
+│   ├── gen_cursor_rules.py    # SKILL.md → .cursor/rules/*.mdc
+│   └── doctor.py              # check rendercv + API keys
+├── .cursor/rules/             # generated Cursor rules (one per skill)
+├── docs/                      # RUNTIMES.md (compat matrix) + JOB_SEARCH.md
+├── tests/                     # smoke.py runner + fixtures
+└── profile/                   # master-profile.example.md (your real one is gitignored)
+```
+
 ## Keys (all optional)
 
 Copy `.env.example` → `.env`. Most skills need nothing. Job search gets stronger as you add keys (Adzuna is free; SerpApi/Firecrawl freemium) — full breakdown in [`docs/JOB_SEARCH.md`](docs/JOB_SEARCH.md).
@@ -115,7 +225,8 @@ Copy `.env.example` → `.env`. Most skills need nothing. Job search gets strong
 ## Design notes
 
 - **The master profile** (`profile/master-profile.md`) is the shared memory; `build-profile` creates it, the rest consume it. Skills also compose via small JSON sidecars (e.g. `scores/<id>.score.json` → `tailor-resume`).
-- **Claude is the model** — no external LLM key for reasoning skills.
+- **The model is the engine** — no external LLM key for reasoning skills; runs on whichever model your runtime provides.
+- **Runtime-agnostic by design** — `SKILL.md` + relative-path knowledge packs + JSON sidecars, no framework lock-in. See [`docs/RUNTIMES.md`](docs/RUNTIMES.md).
 - **Scripts are Python 3 stdlib only** (zero build), print JSON to stdout, read keys from env, and degrade gracefully when a key is absent.
 - **Never fabricates** — every materials/comms skill is grounded in the profile; see [`skills/_shared/RULES.md`](skills/_shared/RULES.md).
 
