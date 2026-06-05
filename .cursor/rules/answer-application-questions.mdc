@@ -1,0 +1,10 @@
+---
+description: Answer one or many application-form questions from the master profile, obeying per-type format rules — numeric → number only, yes/no → Yes|No, short → ≤ 2 sentences, paragraph → ≤ max_chars, enum → one of options. Batch JSON in/out (for JobClaw form-fill); single-question paste mode for interactive use. Flags any question without profile evidence rather than fabricating an answer. Use whenever the user pastes a single application question OR passes a JSON form schema (typically scraped by JobClaw's Playwright). Pairs with scripts/answer.py for output validation.
+alwaysApply: false
+---
+
+# answer-application-questions
+
+This task maps to the **`answer-application-questions`** skill in this repo. Read [`skills/answer-application-questions/SKILL.md`](../../skills/answer-application-questions/SKILL.md) and follow it exactly — it is the single source of truth for this workflow.
+
+Before producing any output, obey the shared rules in [`skills/_shared/RULES.md`](../../skills/_shared/RULES.md) (never fabricate, never echo the `context:` block, region-pack-first, no emoji, known-info gate).

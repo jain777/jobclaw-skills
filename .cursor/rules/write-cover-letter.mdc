@@ -1,0 +1,10 @@
+---
+description: Produce a job-specific, profile-grounded cover letter in markdown — ≤ 350 words, ≤ 1 page, three paragraphs (hook → two quantified proofs → fit close). Reuses keywords from a prior tailor-resume sidecar when present. Writes a JSON sidecar reserved for a future /render-resume --kind cover-letter (rendercv). Use when the user wants a cover letter for a specific job — typically after score-fit recommends applying and tailor-resume has produced a tailored resume.
+alwaysApply: false
+---
+
+# write-cover-letter
+
+This task maps to the **`write-cover-letter`** skill in this repo. Read [`skills/write-cover-letter/SKILL.md`](../../skills/write-cover-letter/SKILL.md) and follow it exactly — it is the single source of truth for this workflow.
+
+Before producing any output, obey the shared rules in [`skills/_shared/RULES.md`](../../skills/_shared/RULES.md) (never fabricate, never echo the `context:` block, region-pack-first, no emoji, known-info gate).

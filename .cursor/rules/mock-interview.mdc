@@ -1,0 +1,10 @@
+---
+description: Run a text-based mock interview — one question at a time, capture the user's verbatim answer, end with a scored report per the shared report-schema. Defaults to 5 questions (matches Go original); configurable up to 10. Unanswered questions score 0. Forked. Use to practice for an upcoming round — ideally after /prep-interview produces a question bank. Long-running interactive skill.
+alwaysApply: false
+---
+
+# mock-interview
+
+This task maps to the **`mock-interview`** skill in this repo. Read [`skills/mock-interview/SKILL.md`](../../skills/mock-interview/SKILL.md) and follow it exactly — it is the single source of truth for this workflow.
+
+Before producing any output, obey the shared rules in [`skills/_shared/RULES.md`](../../skills/_shared/RULES.md) (never fabricate, never echo the `context:` block, region-pack-first, no emoji, known-info gate).

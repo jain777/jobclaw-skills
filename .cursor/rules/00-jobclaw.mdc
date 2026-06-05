@@ -1,0 +1,10 @@
+---
+description: JobClaw job-hunt skills — repo conventions and hard rules.
+alwaysApply: true
+---
+
+# jobclaw-skills
+
+This repo is a set of portable job-hunt Agent Skills. The runtime-neutral guide is [`AGENTS.md`](../../AGENTS.md); per-skill workflows live in [`skills/<name>/SKILL.md`](../../skills). When a task matches a skill's description, read that SKILL.md and follow it.
+
+Always obey [`skills/_shared/RULES.md`](../../skills/_shared/RULES.md): never fabricate; never echo the profile `context:` block; read `knowledge/regions/<code>.md` before geography-varying text; no emoji; never re-ask what the profile or a sidecar already holds. Skills compose via JSON sidecars (`jobs/current.json`, `scores/`, `resumes/`, `companies/`, `inbox/`), not direct calls — see [`knowledge/pipeline.md`](../../knowledge/pipeline.md).

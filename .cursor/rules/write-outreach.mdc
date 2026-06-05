@@ -1,0 +1,10 @@
+---
+description: Write a short, profile-grounded cold outreach message to a recruiter, hiring manager, or potential referrer — LinkedIn DM or email — with one clear CTA and no flattery. Use when the user wants to reach out cold for a referral, info chat, recruiter intro, or post-event/post-interview follow-up — targeted at a specific person at a specific company.
+alwaysApply: false
+---
+
+# write-outreach
+
+This task maps to the **`write-outreach`** skill in this repo. Read [`skills/write-outreach/SKILL.md`](../../skills/write-outreach/SKILL.md) and follow it exactly — it is the single source of truth for this workflow.
+
+Before producing any output, obey the shared rules in [`skills/_shared/RULES.md`](../../skills/_shared/RULES.md) (never fabricate, never echo the `context:` block, region-pack-first, no emoji, known-info gate).

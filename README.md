@@ -1,14 +1,35 @@
 # JobClaw Skills
 
-Open-source [Claude Code](https://claude.com/claude-code) skills that run your **entire job hunt** — onboarding, search, fit scoring, tailored resumes, cover letters, application answers, recruiter-inbox triage, interview prep, and offer negotiation. Each skill is a self-contained workflow you invoke in Claude Code.
+Open-source [Agent Skills](https://agentskills.io) that run your **entire job hunt** — onboarding, search, fit scoring, tailored resumes, cover letters, application answers, recruiter-inbox triage, interview prep, and offer negotiation. Each skill is a self-contained `SKILL.md` workflow.
 
-**Bring your own keys — but most skills need none, because Claude itself is the engine.** ~14 of the 19 skills are pure reasoning (no external API); only job search and company research use optional data-API keys.
+**Portable across runtimes** — the same skills run in **Claude Code, Codex, Cursor, Hermes, and OpenClaw** (they follow the open agent-skills standard). See [Use with your runtime](#use-with-your-runtime) below.
 
-These are the reusable **brain** behind JobClaw (an optional autonomous job-hunt agent) — but they stand alone: run them yourself in Claude Code, no agent required.
+**Bring your own keys — but most skills need none, because the model itself is the engine.** ~14 of the 20 skills are pure reasoning (no external API); only job search and company research use optional data-API keys.
 
-## Install
+These are the reusable **brain** behind JobClaw (an optional autonomous job-hunt agent) — but they stand alone: run them yourself in any supported runtime, no agent required.
 
-**As a Claude plugin (one command):**
+## Use with your runtime
+
+Clone this repo, then wire it into your agent with one command:
+
+```
+git clone https://github.com/jain777/jobclaw-skills && cd jobclaw-skills
+./scripts/install.sh            # wires every runtime found below
+```
+
+`install.sh` (a thin, stdlib-only wrapper over `scripts/setup_runtime.py`) symlinks `skills/` into each runtime's discovery path and generates Cursor's rule files. It's idempotent; pass a runtime name to wire just one, `--global` for user-level dirs, or `--copy` on Windows / restricted filesystems.
+
+| Runtime | Wire it | Then invoke |
+|---|---|---|
+| **Claude Code** | install the plugin (below), or `./scripts/install.sh claude` | `/skill-name` |
+| **Codex** | `./scripts/install.sh codex` (links `.agents/skills`) | `/skills`, `$mention`, or auto |
+| **Cursor** | `./scripts/install.sh cursor` (generates `.cursor/rules/*.mdc`) | auto-attach, or `@rule-name` |
+| **Hermes** | native (`./skills/`); `--global` links `~/.hermes/skills/` | auto (description-gated) |
+| **OpenClaw** | native — run with this repo as the workspace | `openclaw skills …` or auto |
+
+Every runtime also reads [`AGENTS.md`](AGENTS.md) (the runtime-neutral guide). Full matrix, invocation details, and tool-namespacing notes: [`docs/RUNTIMES.md`](docs/RUNTIMES.md).
+
+**Claude Code plugin (one command):**
 
 ```
 /plugin marketplace add jain777/jobclaw-skills
@@ -16,8 +37,6 @@ These are the reusable **brain** behind JobClaw (an optional autonomous job-hunt
 ```
 
 (Replace `jain777/jobclaw-skills` with your fork/repo. The plugin auto-loads every skill in `skills/`.)
-
-**Or manually:** clone this repo and copy `skills/` into your project's `.claude/skills/` (or symlink it).
 
 **For `render-resume`** (the only skill with a non-Python dependency), install [rendercv](https://github.com/rendercv/rendercv) once:
 

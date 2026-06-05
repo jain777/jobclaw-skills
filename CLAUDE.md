@@ -2,6 +2,8 @@
 
 Contributor onboarding for this repo. (Users don't need this — they just install the plugin and run the skills; see `README.md`.)
 
+> **Other runtimes?** These skills are portable to Codex, Cursor, Hermes, and OpenClaw. The runtime-neutral entry point is [`AGENTS.md`](AGENTS.md); per-runtime setup is in [`docs/RUNTIMES.md`](docs/RUNTIMES.md).
+
 ## What this is
 A collection of **19 Claude Code skills** for an end-to-end job hunt, plus shared **knowledge packs**. Claude is the engine — most skills are pure reasoning; a handful have thin Python (stdlib) data-fetch scripts. Skills compose through a shared **master profile** (`profile/master-profile.md`) and small JSON **sidecars**, not a database.
 

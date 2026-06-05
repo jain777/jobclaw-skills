@@ -19,7 +19,7 @@ Produce `profile/master-profile.md` from whatever the user already has, then fil
 ## 1. Gather what exists (don't ask the user to retype anything)
 
 Collect any of these the user provides; actively offer the options:
-- **Resume / CV** — see step 1a for PDFs (mandatory link-extractor first), then read the body with the Read tool.
+- **Resume / CV** — see step 1a for PDFs (mandatory link-extractor first), then read the body with your runtime's file-read tool.
 - **LinkedIn PDF** — read it. (Point them to LinkedIn → profile → *Resources* → *Save to PDF* if they don't have it.)
 - **AI-memory (proactively offer it).** Ask once: *"Have you used ChatGPT, Claude, or Gemini for your job search or career? Paste this prompt into the one you use most and bring back the result — I'll fold in recent interviews, feedback, and career details you'd otherwise have to retype."* Then surface the prompt from [`../../profile/IMPORT_MEMORIES_PROMPT.md`](../../profile/IMPORT_MEMORIES_PROMPT.md) (it pulls only **job-search-relevant** memories, not everything). On ingest, merge **only new facts** — never duplicate what the resume/profile already has; mark uncertain items `[VERIFY]`.
 - **Links** — record every link, then **enrich** the user's own ones (see §1b). LinkedIn stays record-only (ToS).
@@ -28,7 +28,7 @@ Read everything before asking anything.
 
 ### 1a. For every PDF input — run the link extractor FIRST
 
-Claude's native Read tool surfaces visible anchor text only (it shows the word "LinkedIn" but not the URL it's hyperlinked to). LaTeX/Word/Docs resumes routinely embed `\href{url}{anchor}` annotations whose URLs are invisible to Read. **You will silently lose the user's LinkedIn / GitHub / portfolio URLs** if you skip this step.
+A typical agent file-read tool surfaces visible anchor text only (it shows the word "LinkedIn" but not the URL it's hyperlinked to). LaTeX/Word/Docs resumes routinely embed `\href{url}{anchor}` annotations whose URLs are invisible to a plain read. **You will silently lose the user's LinkedIn / GitHub / portfolio URLs** if you skip this step — which is why `extract_links.py` exists.
 
 ```
 python3 skills/build-profile/scripts/extract_links.py <path-to-resume.pdf>
@@ -53,13 +53,13 @@ The script also returns a **`status`** field — branch on it:
   *"I found these other URLs in your resume: <list>. Keep any as portfolio links?"* — so project pages
   (e.g. *lambdatest.com/visual-ai-testing*) can be promoted to `portfolio` if relevant.
 - `encrypted` / `scanned_image` / `unreadable` → the script never crashes (exit 0). When status is one
-  of these **and** the Read tool also returns little/no body text, the PDF is unusable: tell the user
+  of these **and** the file-read tool also returns little/no body text, the PDF is unusable: tell the user
   what's wrong (use the script's `note`) and offer the fallback ladder — (a) paste the resume text,
   (b) supply a `.txt`/`.md`/`.docx` version, or (c) re-export from LinkedIn (*profile → Resources →
   Save to PDF*). **Explicitly warn that embedded links are lost on scanned/encrypted PDFs** and ask
   them to paste their LinkedIn / GitHub / portfolio URLs manually.
 
-After the extractor, use the Read tool for body text. For non-PDF inputs (markdown, pasted text,
+After the extractor, use your runtime's file-read tool for body text. For non-PDF inputs (markdown, pasted text,
 LinkedIn URLs), scan the text directly with regex for any `https?://…` matches.
 
 ### 1b. Enrich the user's own links (don't just record URLs)

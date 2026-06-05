@@ -1,0 +1,10 @@
+---
+description: Draft a reply email matched to one of the taxonomy's reply intents — reply-schedule, reply-accept (with sub-templates for scheduling / assessment / offer), reply-decline, reply-ask, reply-info, follow-up. Mirrors inbound tone; interpolates dates / links; uses the profile's signature. Never auto-sends. Use after triage-inbox suggests an action OR when the user pastes a thread and names the intent. Pairs with infer-status to know which intent fits.
+alwaysApply: false
+---
+
+# draft-reply
+
+This task maps to the **`draft-reply`** skill in this repo. Read [`skills/draft-reply/SKILL.md`](../../skills/draft-reply/SKILL.md) and follow it exactly — it is the single source of truth for this workflow.
+
+Before producing any output, obey the shared rules in [`skills/_shared/RULES.md`](../../skills/_shared/RULES.md) (never fabricate, never echo the `context:` block, region-pack-first, no emoji, known-info gate).

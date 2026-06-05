@@ -1,0 +1,10 @@
+---
+description: Render a resume to a polished PDF via rendercv (Typst engine). Exposes all 9 built-in themes (engineeringresumes is the ATS-safe default) and embeds every link as a real, clickable PDF annotation. Reads the tailor-resume sidecar so the tailored content and links survive intact. Use after tailor-resume to produce a sendable PDF, or any time the user wants a typeset resume file from their profile or a tailored markdown resume.
+alwaysApply: false
+---
+
+# render-resume
+
+This task maps to the **`render-resume`** skill in this repo. Read [`skills/render-resume/SKILL.md`](../../skills/render-resume/SKILL.md) and follow it exactly — it is the single source of truth for this workflow.
+
+Before producing any output, obey the shared rules in [`skills/_shared/RULES.md`](../../skills/_shared/RULES.md) (never fabricate, never echo the `context:` block, region-pack-first, no emoji, known-info gate).

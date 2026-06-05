@@ -1,0 +1,10 @@
+---
+description: Orchestrate the full apply chain for one job — capture the job once, score fit, tailor the resume (PDF), write the cover letter, and answer the application questions — in auto-pilot (run end-to-end, pause only at decision/send gates) or review (confirm each step) mode. Stops before anything that sends or submits. The single entry point for "apply to this job". Use when the user has a specific job (a URL, a pasted JD, or a job_id from find-jobs) and wants the complete application package assembled without running each skill by hand.
+alwaysApply: false
+---
+
+# apply-to-job
+
+This task maps to the **`apply-to-job`** skill in this repo. Read [`skills/apply-to-job/SKILL.md`](../../skills/apply-to-job/SKILL.md) and follow it exactly — it is the single source of truth for this workflow.
+
+Before producing any output, obey the shared rules in [`skills/_shared/RULES.md`](../../skills/_shared/RULES.md) (never fabricate, never echo the `context:` block, region-pack-first, no emoji, known-info gate).

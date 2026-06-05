@@ -1,0 +1,10 @@
+---
+description: Resolve the canonical application status from signals (triage class + current status + days-since-apply / days-since-last-contact + optional portal state) using the taxonomy decision table. Emits {status, next_action, next_action_due_on, rationale}; optionally updates a flat tracker.json. Honours the offer-accept guardrail and the ghosting rule. Use after triage-inbox classifies new emails, before draft-reply chooses an intent template, or any time the user wants to refresh the funnel state for one or many applications.
+alwaysApply: false
+---
+
+# infer-status
+
+This task maps to the **`infer-status`** skill in this repo. Read [`skills/infer-status/SKILL.md`](../../skills/infer-status/SKILL.md) and follow it exactly — it is the single source of truth for this workflow.
+
+Before producing any output, obey the shared rules in [`skills/_shared/RULES.md`](../../skills/_shared/RULES.md) (never fabricate, never echo the `context:` block, region-pack-first, no emoji, known-info gate).

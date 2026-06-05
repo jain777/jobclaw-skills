@@ -1,0 +1,10 @@
+---
+description: Produce a job-specific, ATS-optimized resume from the user's master profile and a target job — reordering, reframing, and surfacing the most relevant real experience and keywords. Enforces a content rubric (bullet shape, length, parallel grammar, metric coverage), then renders a polished PDF by default (via render-resume) and visually QAs it. Never fabricates. Use when the user wants a resume tailored to a specific job, usually after score-fit recommends applying. Needs profile/master-profile.md and a job description.
+alwaysApply: false
+---
+
+# tailor-resume
+
+This task maps to the **`tailor-resume`** skill in this repo. Read [`skills/tailor-resume/SKILL.md`](../../skills/tailor-resume/SKILL.md) and follow it exactly — it is the single source of truth for this workflow.
+
+Before producing any output, obey the shared rules in [`skills/_shared/RULES.md`](../../skills/_shared/RULES.md) (never fabricate, never echo the `context:` block, region-pack-first, no emoji, known-info gate).

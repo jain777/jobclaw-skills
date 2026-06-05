@@ -1,0 +1,10 @@
+---
+description: Find relevant job listings for the user by combining multiple sources — Claude web search, ATS-direct boards (Greenhouse/Lever/Ashby/Workday/SmartRecruiters), Hacker News hiring, and optional APIs (Adzuna, SerpApi) with a Firecrawl scrape fallback — then normalize, dedupe across runs, and rank against the master profile. Use when the user wants to find or refresh job listings, search a role/location, or feed candidates to score-fit. Runs after build-profile.
+alwaysApply: false
+---
+
+# find-jobs
+
+This task maps to the **`find-jobs`** skill in this repo. Read [`skills/find-jobs/SKILL.md`](../../skills/find-jobs/SKILL.md) and follow it exactly — it is the single source of truth for this workflow.
+
+Before producing any output, obey the shared rules in [`skills/_shared/RULES.md`](../../skills/_shared/RULES.md) (never fabricate, never echo the `context:` block, region-pack-first, no emoji, known-info gate).

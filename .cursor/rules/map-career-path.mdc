@@ -1,0 +1,10 @@
+---
+description: Map a transition from a current role to a target role — surface real LinkedIn-style transition examples + a personalized gap roadmap (skills, experiences, signals) grounded in the user's profile. Optional Google CSE script (better recall) when keys are present; WebSearch fallback ships keyless. Use when the user is contemplating a role change ("PM → Director of Product", "SWE → AI Engineer", "Analyst → PM"). Lower priority than the apply / recruiter loops.
+alwaysApply: false
+---
+
+# map-career-path
+
+This task maps to the **`map-career-path`** skill in this repo. Read [`skills/map-career-path/SKILL.md`](../../skills/map-career-path/SKILL.md) and follow it exactly — it is the single source of truth for this workflow.
+
+Before producing any output, obey the shared rules in [`skills/_shared/RULES.md`](../../skills/_shared/RULES.md) (never fabricate, never echo the `context:` block, region-pack-first, no emoji, known-info gate).

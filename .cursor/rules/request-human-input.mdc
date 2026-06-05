@@ -1,0 +1,10 @@
+---
+description: Decide whether a blocking situation needs human input; compose a mobile-first prompt with ≤ 3 quick-reply options + a stated timeout default; parse a free-text reply back into a structured decision. v0 reasoning-only — delivery (Telegram / WhatsApp) lives in JobClaw's HITL MCP, not here. Always persists requests/<id>.json in compose mode. Use when a flagged answer-application-questions item, an `escalate` triage row, or any ambiguous / irreversible action needs a human. Two modes: compose (no reply) → produce the question; parse (reply given) → interpret it.
+alwaysApply: false
+---
+
+# request-human-input
+
+This task maps to the **`request-human-input`** skill in this repo. Read [`skills/request-human-input/SKILL.md`](../../skills/request-human-input/SKILL.md) and follow it exactly — it is the single source of truth for this workflow.
+
+Before producing any output, obey the shared rules in [`skills/_shared/RULES.md`](../../skills/_shared/RULES.md) (never fabricate, never echo the `context:` block, region-pack-first, no emoji, known-info gate).

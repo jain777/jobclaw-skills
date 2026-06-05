@@ -29,3 +29,7 @@ skills/render-resume/.venv/
 
 # Note: knowledge/companies/{companies.csv, resolved.json} ARE committed (shipped catalog + token cache).
 .claude/
+
+# Per-machine runtime discovery symlinks (wired by scripts/setup_runtime.py).
+# Codex's .agents/skills is machine-local; .cursor/rules/ IS committed (generated, source-controlled).
+.agents/
