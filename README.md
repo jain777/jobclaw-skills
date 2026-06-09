@@ -1,4 +1,4 @@
-# JobClaw Skills
+<h1 align="center">JobClaw <sub>by whatNxtAI</sub></h1>
 
 <p align="center">
   <em>Your entire job hunt, run from inside your AI coding agent.</em><br>
@@ -7,6 +7,7 @@
 </p>
 
 <p align="center">
+  <img src="https://img.shields.io/badge/JobClaw-by_whatNxtAI-6E56CF?style=flat" alt="JobClaw by whatNxtAI">
   <img src="https://img.shields.io/badge/Claude_Code-000?style=flat&logo=anthropic&logoColor=white" alt="Claude Code">
   <img src="https://img.shields.io/badge/Codex-111827?style=flat&logo=openai&logoColor=white" alt="Codex">
   <img src="https://img.shields.io/badge/Cursor-0A0A0A?style=flat&logo=cursor&logoColor=white" alt="Cursor">
@@ -21,7 +22,7 @@
 
 ## What is this
 
-Open-source [Agent Skills](https://agentskills.io) that run your **entire job hunt** from inside an AI coding agent. Each skill is a self-contained `SKILL.md` workflow; together they form a pipeline that:
+**JobClaw by whatNxtAI** is a set of open-source [Agent Skills](https://agentskills.io) that run your **entire job hunt** from inside an AI coding agent. Each skill is a self-contained `SKILL.md` workflow; together they form a pipeline that:
 
 - **Onboards you once** — a resume / LinkedIn PDF (links and all) becomes the canonical **master profile** every other skill reads
 - **Finds and scores jobs** — 13 pluggable adapters (ATS-direct, SmartRecruiters, YC, HN…), deduped and freshness-verified, ranked against your profile
@@ -33,7 +34,7 @@ Open-source [Agent Skills](https://agentskills.io) that run your **entire job hu
 
 **Bring your own keys — but most skills need none, because the model itself is the engine.** ~14 of the 20 skills are pure reasoning (no external API); only job search and company research use optional data-API keys.
 
-These are the reusable **brain** behind JobClaw (an optional autonomous job-hunt agent) — but they stand alone: run them yourself in any supported runtime, no agent required.
+These are the reusable **brain** behind JobClaw — whatNxtAI's autonomous job-hunt agent — but they stand alone: run them yourself in any supported runtime, no agent required.
 
 ## Features
 
@@ -234,6 +235,10 @@ Copy `.env.example` → `.env`. Most skills need nothing. Job search gets strong
 
 More region packs (Canada / EU / Singapore), Naukri & Internshala adapters (India consumer/FMCG recall), and direct enterprise-ATS adapters. (Relevance ranking shipped — `find-jobs` computes a real `fit_rank` and `score-fit`/`build-profile` share one matching engine; see [`knowledge/relevance.md`](knowledge/relevance.md).) Job-search strategy + caveats: [`docs/JOB_SEARCH.md`](docs/JOB_SEARCH.md).
 
+## About
+
+**JobClaw** is built by **whatNxtAI**. These skills are the open-source brain; the full product is an autonomous job-hunt agent that runs the same pipeline for you end to end. Encouraging-coach by design: it does the legwork, you make the calls.
+
 ## License & credits
 
-[MIT](LICENSE). The AI-role archetype taxonomy in `knowledge/ai-roles.md` is adapted from the open-source [career-ops](https://github.com/santifer/career-ops) project. Contributions welcome — see [`CONTRIBUTING.md`](CONTRIBUTING.md).
+[MIT](LICENSE). "JobClaw" and "whatNxtAI" are brand names of the whatNxtAI project. The AI-role archetype taxonomy in `knowledge/ai-roles.md` is adapted from the open-source [career-ops](https://github.com/santifer/career-ops) project. Contributions welcome — see [`CONTRIBUTING.md`](CONTRIBUTING.md).

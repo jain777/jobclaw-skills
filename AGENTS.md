@@ -1,4 +1,4 @@
-# AGENTS.md — jobclaw-skills
+# AGENTS.md — JobClaw by whatNxtAI
 
 Universal, runtime-neutral instructions for any coding/agent runtime that reads `AGENTS.md`
 (Codex, Cursor, Hermes, OpenClaw, and friends). Claude Code reads `CLAUDE.md`; both point at the
@@ -6,7 +6,7 @@ same skills. For per-runtime setup, see [`docs/RUNTIMES.md`](docs/RUNTIMES.md).
 
 ## What this repo is
 
-A collection of **20 portable [Agent Skills](https://agentskills.io)** that run an end-to-end job
+**JobClaw by whatNxtAI** is a collection of **20 portable [Agent Skills](https://agentskills.io)** that run an end-to-end job
 hunt — onboarding a profile, searching jobs, scoring fit, tailoring resumes, writing cover letters,
 answering application questions, triaging the recruiter inbox, prepping interviews, and coaching
 negotiation — plus shared **knowledge packs**. The LLM is the engine: ~14 of the 20 skills are pure

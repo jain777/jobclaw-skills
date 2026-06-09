@@ -1,7 +1,7 @@
 {
   "name": "jobclaw-skills",
   "metadata": {
-    "description": "Open-source Claude Code skills that run your entire job hunt — search, fit scoring, tailored resumes, recruiter triage, interview prep, and negotiation."
+    "description": "JobClaw by whatNxtAI — open-source Agent Skills that run your entire job hunt: search, fit scoring, tailored resumes, recruiter triage, interview prep, and negotiation."
   },
   "owner": {
     "name": "Jeevesh Jain",
@@ -11,7 +11,7 @@
     {
       "name": "jobclaw-skills",
       "source": "./",
-      "description": "End-to-end job-hunt skills for Claude Code (bring your own keys; most need none).",
+      "description": "JobClaw by whatNxtAI — end-to-end job-hunt Agent Skills (bring your own keys; most need none).",
       "category": "productivity"
     }
   ]
